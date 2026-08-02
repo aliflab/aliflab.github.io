@@ -150,8 +150,8 @@
           <!-- My Picture -->
           <div class="col-sm-6">
             <div class="profile-img wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
-              <div class="img-border">
-                <img src="assets/images/aleef.png" alt="" class="img-fluid">
+              <div class="img-border" id="storyRing">
+                <img src="assets/images/aleef.png" alt="Ahmed Alif Swopno" class="img-fluid">
               </div>
             </div>
           </div>
@@ -1095,6 +1095,26 @@
     </div>
   </div>
 
+  <!-- Story Viewer -->
+  <div class="story-backdrop" id="storyBackdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Story viewer">
+    <div class="story-stage" id="storyStage">
+      <div class="story-bars" id="storyBars"></div>
+      <div class="story-head">
+        <img src="assets/images/aleef.png" alt="" class="story-avatar">
+        <span class="story-author">Ahmed Alif Swopno</span>
+        <button type="button" class="story-mute" id="storyMute" aria-label="Unmute" hidden>
+          <i class="fa-solid fa-volume-xmark"></i>
+        </button>
+        <button type="button" class="story-close" id="storyClose" aria-label="Close stories">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="story-media" id="storyMedia"></div>
+      <button type="button" class="story-nav story-prev" id="storyPrev" aria-label="Previous story"></button>
+      <button type="button" class="story-nav story-next" id="storyNext" aria-label="Next story"></button>
+    </div>
+  </div>
+
   <!--
   ===================
     Certificate
@@ -1437,6 +1457,8 @@
   <script src="assets/myjs/theme-toggle.js"></script>
   <script src="assets/myjs/hero-typer.js"></script>
   <script src="assets/myjs/hero-stats.js"></script>
+  <script src="assets/myjs/stories-data.js"></script>
+  <script src="assets/myjs/stories.js"></script>
   <script src="assets/myjs/projects.js"></script>
   <script src="assets/myjs/genai.js"></script>
 

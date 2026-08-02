@@ -1175,7 +1175,59 @@ body {
   width: 350px;
   border: 6px solid rgba(16, 136, 255, 0.527);
   margin: 0 auto;
+  border-radius: 50%;
+  position: relative; }
+
+/* ── Instagram-style story ring ─────────────────────────────────────────────
+   Only active once stories.js finds entries in STORIES; otherwise the plain
+   blue border above is left untouched. */
+.mh-home .img-border.has-story img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 50%; }
+
+.mh-home .img-border.has-story {
+  border-color: transparent;
+  cursor: pointer; }
+
+.mh-home .img-border.has-story::before,
+.mh-home .img-border.has-story::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%; }
+
+/* The gradient ring itself */
+.mh-home .img-border.has-story::before {
+  top: -9px; right: -9px; bottom: -9px; left: -9px;
+  z-index: 0;
+  background: conic-gradient(from 0deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #f09433);
+  animation: story-ring-spin 6s linear infinite; }
+
+/* The gap between the ring and the photo */
+.mh-home .img-border.has-story::after {
+  top: -3px; right: -3px; bottom: -3px; left: -3px;
+  z-index: 1;
+  background: #fff; }
+
+/* Already viewed — dull, static ring */
+.mh-home .img-border.has-story.is-seen::before {
+  background: #d3d3d3;
+  animation: none; }
+
+.mh-home .img-border.has-story:focus-visible {
+  outline: none; }
+
+.mh-home .img-border.has-story:focus-visible::before {
+  box-shadow: 0 0 0 3px rgba(16, 136, 255, 0.5); }
+
+@keyframes story-ring-spin {
+  to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .mh-home .img-border.has-story::before { animation: none; } }
 
 .mh-featured-project-img img {
   width: inherit !important;
@@ -6178,4 +6230,192 @@ body.dark-mode .cp-link {
   .cp-rank-badge  { gap: 16px; padding: 18px 20px; }
   .cp-rank-num    { font-size: 44px; }
   .cp-rank-title  { font-size: 16px; }
+}
+
+/* ============================================================================
+   STORY VIEWER
+   Full-screen Instagram-style story player, opened from the hero profile ring.
+   ========================================================================== */
+
+.story-backdrop {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 9500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.story-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.story-stage {
+  position: relative;
+  height: 92vh;
+  max-height: 900px;
+  width: calc(92vh * 9 / 16);
+  max-width: 100vw;
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  transform: scale(0.97);
+  transition: transform 0.25s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.story-backdrop.is-open .story-stage {
+  transform: scale(1);
+}
+
+/* ── Progress bars ── */
+.story-bars {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  gap: 4px;
+  padding: 10px;
+  z-index: 3;
+}
+
+.story-bar {
+  flex: 1 1 0;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.35);
+  overflow: hidden;
+}
+
+.story-bar-fill {
+  height: 100%;
+  width: 100%;
+  border-radius: 2px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+/* ── Header ── */
+.story-head {
+  position: absolute;
+  top: 20px; left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px 24px;
+  z-index: 3;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+.story-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.story-author {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  margin-right: auto;
+}
+
+.story-mute,
+.story-close {
+  pointer-events: auto;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  padding: 6px 8px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.story-mute:hover,
+.story-close:hover { opacity: 1; }
+
+.story-mute[hidden] { display: none; }
+
+/* ── Media ── */
+.story-media {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: 1;
+  background: #000;
+}
+
+.story-media img,
+.story-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+/* ── Invisible tap zones ── */
+.story-nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.story-nav:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: -4px;
+}
+
+.story-prev { left: 0;  width: 30%; }
+.story-next { right: 0; width: 70%; }
+
+/* Dim the chrome while held/paused */
+.story-bars,
+.story-head {
+  transition: opacity 0.2s ease;
+}
+
+.story-stage.is-paused .story-bars,
+.story-stage.is-paused .story-head {
+  opacity: 0.25;
+}
+
+/* ── Phones: edge to edge ── */
+@media (max-width: 576px) {
+  .story-stage {
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    width: 100vw;
+    border-radius: 0;
+  }
+}
+
+/* ── Dark mode ── */
+body.dark-mode .mh-home .img-border.has-story::after {
+  background: #0d1117;
+}
+
+body.dark-mode .mh-home .img-border.has-story.is-seen::before {
+  background: #4a4a4a;
 }
