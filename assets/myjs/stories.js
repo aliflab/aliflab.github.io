@@ -25,6 +25,10 @@
   var SEEN_KEY = 'alifStoriesSeen';
   var DEFAULT_DURATION = 5000;
   var HOLD_MS = 200;
+  // A video that stalls or never decodes does not always fire an 'error'
+  // event -- it can sit in networkState LOADING forever. Without this the
+  // story would hang on a frozen progress bar, so give up and move on.
+  var STALL_MS = 8000;
 
   // ── State ──────────────────────────────────────────────────────────────────
   var index = 0;
@@ -34,6 +38,8 @@
   var duration = DEFAULT_DURATION;
   var paused = false;
   var video = null;
+  var lastVideoTime = -1;
+  var lastProgressTs = 0;
   var fills = [];
   var holdTimer = null;
   var suppressClick = false;
@@ -72,6 +78,12 @@
     var ratio;
     if (video) {
       // Videos keep their own clock, so read it directly.
+      if (video.currentTime !== lastVideoTime) {
+        lastVideoTime = video.currentTime;
+        lastProgressTs = now;
+      } else if (now - lastProgressTs > STALL_MS) {
+        stopLoop(); next(); return;   // stalled, don't hang the viewer
+      }
       ratio = duration ? (video.currentTime * 1000) / duration : 0;
     } else {
       elapsed = now - startTs;
@@ -87,6 +99,8 @@
     elapsed = 0;
     paused = false;
     startTs = performance.now();
+    lastVideoTime = -1;
+    lastProgressTs = startTs;
     rafId = requestAnimationFrame(tick);
   }
 
@@ -101,6 +115,8 @@
   function resume() {
     if (!paused) return;
     paused = false;
+    // Time spent held/hidden must not count towards the stall watchdog.
+    lastProgressTs = performance.now();
     if (video) { video.play().catch(function () {}); }
     else { startTs = performance.now() - elapsed; }
     stage.classList.remove('is-paused');
