@@ -10,8 +10,9 @@
       "Bash(awk 'NR>=5367' css/../css/styles.css)",
       "Bash(node -e \"const c=require\\('fs'\\).readFileSync\\('assets/css/styles.css','utf8'\\);const o=\\(c.match\\(/{/g\\)||[]\\).length,cl=\\(c.match\\(/}/g\\)||[]\\).length;console.log\\('open',o,'close',cl,o===cl?'BALANCED':'MISMATCH'\\)\")",
       "Bash(git *)",
-      "Bash(node test-stories.js)",
-      "Bash(node --check assets/myjs/stories.js)"
+      "Bash(node --check assets/myjs/stories.js)",
+      "Bash(grep -n \"^span\\\\|^ *span *[,{]\\\\|dark-mode span\\\\|body span\" assets/css/styles.css assets/css/responsive.css)",
+      "Bash(grep -rn \"^\\\\s*\\\\\\(p\\\\s*,\\\\|h[1-6]\\\\s*,\\\\|span\\\\s*,\\\\|.*,\\\\s*span\\\\s*[,{]\\\\\\)\" assets/css/styles.css assets/css/responsive.css)"
     ]
   }
 }

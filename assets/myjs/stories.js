@@ -28,7 +28,13 @@
   // A video that stalls or never decodes does not always fire an 'error'
   // event -- it can sit in networkState LOADING forever. Without this the
   // story would hang on a frozen progress bar, so give up and move on.
+  // "Stalled" means no clock movement AND no new bytes: a big file arriving
+  // slowly is progress, not a stall, so it must not be skipped.
   var STALL_MS = 8000;
+  // An element that is paused rather than starved is usually a refused
+  // autoplay (iOS Low Power Mode, a strict engine after unmuting). Re-ask it
+  // to play instead of silently dropping the story on the first hiccup.
+  var RETRY_PLAY_MS = 1000;
 
   // ── State ──────────────────────────────────────────────────────────────────
   var index = 0;
@@ -39,7 +45,9 @@
   var paused = false;
   var video = null;
   var lastVideoTime = -1;
+  var lastBufferedEnd = -1;
   var lastProgressTs = 0;
+  var lastPlayRetryTs = 0;
   var fills = [];
   var holdTimer = null;
   var suppressClick = false;
@@ -71,6 +79,15 @@
     if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
   }
 
+  // How far the download has got. Growing = the network is still feeding us,
+  // so a video that has not started playing yet is loading, not stalled.
+  function bufferedEnd(el) {
+    try {
+      var b = el.buffered;
+      return b && b.length ? b.end(b.length - 1) : 0;
+    } catch (e) { return 0; }
+  }
+
   function tick(now) {
     rafId = requestAnimationFrame(tick);
     if (paused) return;
@@ -78,13 +95,25 @@
     var ratio;
     if (video) {
       // Videos keep their own clock, so read it directly.
-      if (video.currentTime !== lastVideoTime) {
-        lastVideoTime = video.currentTime;
+      var vTime = video.currentTime;
+      var vBuf = bufferedEnd(video);
+      if (vTime !== lastVideoTime || vBuf !== lastBufferedEnd) {
+        // Playing, or still downloading. Either way it is alive.
+        lastVideoTime = vTime;
+        lastBufferedEnd = vBuf;
         lastProgressTs = now;
-      } else if (now - lastProgressTs > STALL_MS) {
-        stopLoop(); next(); return;   // stalled, don't hang the viewer
+      } else {
+        // Neither the clock nor the buffer moved. If the element is merely
+        // paused the browser refused to play it, so ask again before judging.
+        if (video.paused && now - lastPlayRetryTs > RETRY_PLAY_MS) {
+          lastPlayRetryTs = now;
+          video.play().catch(function () {});
+        }
+        if (now - lastProgressTs > STALL_MS) {
+          stopLoop(); next(); return;   // stalled, don't hang the viewer
+        }
       }
-      ratio = duration ? (video.currentTime * 1000) / duration : 0;
+      ratio = duration ? (vTime * 1000) / duration : 0;
     } else {
       elapsed = now - startTs;
       ratio = elapsed / duration;
@@ -100,7 +129,13 @@
     paused = false;
     startTs = performance.now();
     lastVideoTime = -1;
+    lastBufferedEnd = -1;
     lastProgressTs = startTs;
+    lastPlayRetryTs = startTs;
+    // We just cleared `paused`, so the dimmed chrome must go with it --
+    // otherwise advancing mid-hold (keyboard, or the stall watchdog) leaves
+    // the bars and header stuck at 0.25 opacity until the viewer closes.
+    stage.classList.remove('is-paused');
     rafId = requestAnimationFrame(tick);
   }
 
@@ -117,6 +152,7 @@
     paused = false;
     // Time spent held/hidden must not count towards the stall watchdog.
     lastProgressTs = performance.now();
+    lastPlayRetryTs = lastProgressTs;
     if (video) { video.play().catch(function () {}); }
     else { startTs = performance.now() - elapsed; }
     stage.classList.remove('is-paused');
