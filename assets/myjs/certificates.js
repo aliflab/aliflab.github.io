@@ -32,7 +32,10 @@
 
   function applyFilter(cat) {
     var matches = allItems.filter(function (item) {
-      return cat === '*' || item.getAttribute('data-cat') === cat;
+      // data-cat is a space-separated token list, so an item can sit in more
+      // than one category (e.g. the AWS AI cert is both Cloud & IT and AI & Data).
+      var cats = (item.getAttribute('data-cat') || '').split(' ');
+      return cat === '*' || cats.indexOf(cat) !== -1;
     });
 
     // Detach everything, then re-attach only the matching slides.
