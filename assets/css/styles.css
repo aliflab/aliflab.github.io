@@ -1810,6 +1810,82 @@ body {
   margin-right: auto;
 }
 
+/* Category tabs — reuses .proj-filters / .proj-filter-btn styling */
+.cert-filters {
+  margin-bottom: 30px;
+}
+
+/* Move the indicators out from on top of the slide so they don't collide with
+   the caption, and give the inactive dots contrast against the page (Bootstrap
+   defaults them to translucent white, meant for overlaying an image). */
+#carouselExampleIndicators {
+  display: flex;
+  flex-direction: column;
+}
+
+#carouselExampleIndicators .carousel-inner {
+  order: 1;
+}
+
+#carouselExampleIndicators .carousel-indicators {
+  order: 2;
+  position: static;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 22px 0 0;
+}
+
+#carouselExampleIndicators .carousel-indicators li {
+  margin-left: 0;
+  margin-right: 0;
+  background-color: rgba(0, 0, 0, 0.22);
+}
+
+/* Restated at this specificity so it still beats the rule above. */
+#carouselExampleIndicators .carousel-indicators li.active {
+  background-color: #1089ff;
+}
+
+/* Slide caption */
+.cert-caption {
+  padding: 18px 12px 0;
+  text-align: center;
+}
+
+.cert-caption h5 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 0 6px;
+  color: #2a2a2a;
+}
+
+.cert-caption .cert-issuer {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0 0 10px;
+}
+
+.cert-caption .cert-cat {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #1089ff;
+  background: rgba(16, 137, 255, 0.1);
+}
+
+@media (max-width: 767px) {
+  #carouselExampleIndicators {
+    max-width: 100%;
+  }
+  .cert-caption h5 { font-size: 14px; }
+  .cert-caption .cert-issuer { font-size: 12px; }
+}
+
 
 /*
     ==============
@@ -5282,6 +5358,20 @@ body.dark-mode .proj-filter-btn.active {
   background: #1089ff !important;
   color: #fff !important;
   border-color: #1089ff !important;
+}
+
+/* ── Awards & Certificates ────────────────────────────────────── */
+body.dark-mode .cert-caption h5 { color: #e6edf3 !important; }
+body.dark-mode .cert-caption .cert-issuer { color: #8b949e !important; }
+body.dark-mode .cert-caption .cert-cat {
+  color: #58a6ff !important;
+  background: rgba(88, 166, 255, 0.14) !important;
+}
+body.dark-mode #carouselExampleIndicators .carousel-indicators li {
+  background-color: rgba(255, 255, 255, 0.22) !important;
+}
+body.dark-mode #carouselExampleIndicators .carousel-indicators li.active {
+  background-color: #1089ff !important;
 }
 
 body.dark-mode .proj-card {
