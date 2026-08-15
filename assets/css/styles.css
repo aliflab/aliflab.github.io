@@ -1784,6 +1784,12 @@ body {
    rather than on the image + caption + indicator stack. */
 #carouselExampleIndicators .carousel-control-prev,
 #carouselExampleIndicators .carousel-control-next {
+  /* Required. Bootstrap 4 gives the controls no z-index — it relies on them coming
+     after .carousel-inner in document order. We set order:1 on .carousel-inner below
+     (to move the indicator row under the slide), and flex items paint in
+     order-modified document order, which puts the slide image back on top and hides
+     the arrows. Bootstrap 5 fixed this upstream by giving the controls a z-index. */
+  z-index: 5;
   top: var(--cert-arrow-top, 50%);
   bottom: auto;
   transform: translateY(-50%);
