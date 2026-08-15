@@ -15,7 +15,8 @@
 
   var inner      = carousel.querySelector('.carousel-inner');
   var indicators = carousel.querySelector('.carousel-indicators');
-  var controls   = carousel.querySelectorAll('.carousel-control-prev, .carousel-control-next');
+  var prevBtn    = carousel.querySelector('.carousel-control-prev');
+  var nextBtn    = carousel.querySelector('.carousel-control-next');
   var filterBtns = document.querySelectorAll('.cert-filter-btn');
   if (!inner || !indicators) return;
 
@@ -58,13 +59,68 @@
     }
     indicators.innerHTML = html;
 
-    // With a single slide there is nothing to navigate to.
-    var navigable = matches.length > 1;
-    indicators.style.display = navigable ? '' : 'none';
-    Array.prototype.forEach.call(controls, function (c) {
-      c.style.display = navigable ? '' : 'none';
+    // A lone dot conveys nothing; the arrows stay put and simply fade (see syncNav).
+    indicators.style.display = matches.length > 1 ? '' : 'none';
+
+    schedule();
+  }
+
+  // ── Arrow state ─────────────────────────────────────────────────────────────
+  // The carousel is data-wrap="false", so at either end there is no slide to move
+  // to. Fade and disable the corresponding arrow rather than leaving it live.
+  function setDisabled(btn, disabled) {
+    if (!btn) return;
+    btn.classList.toggle('cert-nav-disabled', disabled);
+    btn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+    if (disabled) btn.setAttribute('tabindex', '-1');
+    else btn.removeAttribute('tabindex');
+  }
+
+  function syncNav() {
+    var items  = inner.children;
+    var count  = items.length;
+    var active = inner.querySelector('.carousel-item.active');
+    var index  = active ? Array.prototype.indexOf.call(items, active) : 0;
+
+    setDisabled(prevBtn, index <= 0);
+    setDisabled(nextBtn, index >= count - 1);
+
+    // Centre the arrows on the image rather than on the whole stack. .carousel-inner
+    // is order:1 so it starts at the carousel's top edge, which makes half the image
+    // height the image's own vertical centre — the caption and indicator row below it
+    // (and slide heights that vary ~2x between landscape and portrait scans) then
+    // stop dragging the arrows off centre.
+    var img = active && active.querySelector('img');
+    var h   = img ? img.offsetHeight : 0;
+    if (h > 0) carousel.style.setProperty('--cert-arrow-top', (h / 2) + 'px');
+    else carousel.style.removeProperty('--cert-arrow-top');
+  }
+
+  var pending = false;
+  function schedule() {
+    if (pending) return;
+    pending = true;
+    window.requestAnimationFrame(function () {
+      pending = false;
+      syncNav();
     });
   }
+
+  // Bootstrap fires slid.bs.carousel through jQuery.trigger(), which never reaches
+  // addEventListener — so watch the DOM instead. This catches every slide change,
+  // whatever drove it: an arrow, an indicator dot, or our own applyFilter rebuild.
+  new MutationObserver(schedule).observe(inner, {
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['class']
+  });
+
+  // Image height decides the layout, and it is only known once each image has loaded.
+  window.addEventListener('resize', schedule);
+  allItems.forEach(function (item) {
+    var img = item.querySelector('img');
+    if (img && !img.complete) img.addEventListener('load', schedule);
+  });
 
   Array.prototype.forEach.call(filterBtns, function (btn) {
     btn.addEventListener('click', function () {
