@@ -2,7 +2,7 @@
 
 Personal portfolio and blog website for Ahmed Alif Swopno, hosted on GitHub Pages.
 
-**Live site:** https://thealiflab.github.io/
+**Live site:** https://aliflab.github.io/
 
 ---
 
@@ -40,7 +40,7 @@ A fully static single-page portfolio built with plain HTML, CSS, and vanilla Jav
 ## Project Structure
 
 ```
-thealiflab.github.io/
+aliflab.github.io/
 ├── index.html              # Single-page portfolio (all sections)
 ├── blog/                   # Blog index and individual article pages
 ├── projects/               # Project sub-pages (e.g. coronaalert.html)

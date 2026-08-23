@@ -1,2 +1,2 @@
-const HOME_PAGE_URL = 'https://thealiflab.github.io/';
+const HOME_PAGE_URL = 'https://aliflab.github.io/';
 
