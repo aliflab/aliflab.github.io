@@ -1,14 +1,14 @@
-# AlifLab — Personal Portfolio
+# <img src="assets/images/favicon/new_favicon/favicon-32x32.png" width="28" height="28" alt=""> AlifLab - Personal Portfolio
 
 Personal portfolio and blog website for Ahmed Alif Swopno, hosted on GitHub Pages.
 
-**Live site:** https://aliflab.github.io/
+**Live site:** https://aliflab.org
 
 ---
 
 ## Overview
 
-A fully static single-page portfolio built with plain HTML, CSS, and vanilla JavaScript — no build system, no bundler, no package manager. Deployed automatically by pushing to the `main` branch on GitHub Pages.
+A fully static single-page portfolio built with plain HTML, CSS, and vanilla JavaScript. No build system, no bundler, no package manager. Deployed automatically by pushing to the `main` branch on GitHub Pages.
 
 ---
 
@@ -18,7 +18,7 @@ A fully static single-page portfolio built with plain HTML, CSS, and vanilla Jav
 |---|---|
 | **Home** | Hero with typing role animation, location line, CTA buttons, and fun stats widget |
 | **About** | Bio and tabbed Skills & Tech Stack (Languages, ML & Data, Frameworks, Cloud, Databases, Tools) |
-| **Experiences** | Professional Development timeline — work, education, and achievement entries |
+| **Experiences** | Professional Development timeline - work, education, and achievement entries |
 | **Projects** | Filterable project card grid with show more/less and detail modals |
 | **My AI Stack** | Visual pyramid of 39 AI tools across 6 tiers, with per-tool modals |
 | **Certificates** | Scrollable carousel of awards and certificates |
@@ -28,12 +28,12 @@ A fully static single-page portfolio built with plain HTML, CSS, and vanilla Jav
 
 ## Tech Stack
 
-- **HTML5 / CSS3 / Vanilla JavaScript** — no framework
-- **Bootstrap 4** — grid and carousel
-- **Font Awesome 6.7.2** — icons
-- **Particles.js** — hero background particle animation
-- **WOW.js + Animate.css** — scroll-triggered entrance animations
-- **Formspree** — contact form backend
+- **HTML5 / CSS3 / Vanilla JavaScript** - no framework
+- **Bootstrap 4** - grid and carousel
+- **Font Awesome 6.7.2** - icons
+- **Particles.js** - hero background particle animation
+- **WOW.js + Animate.css** - scroll-triggered entrance animations
+- **Formspree** - contact form backend
 
 ---
 
@@ -58,7 +58,7 @@ aliflab.github.io/
 
 | File | Purpose |
 |---|---|
-| `theme-toggle.js` | Light / dark mode toggle — syncs icon, applies `dark-mode` class, persists to `localStorage` |
+| `theme-toggle.js` | Light / dark mode toggle - syncs icon, applies `dark-mode` class, persists to `localStorage` |
 | `hero-typer.js` | Typing animation for role titles in the hero section |
 | `hero-stats.js` | Count-up animation for the fun stats widget (IntersectionObserver) |
 | `projects.js` | Project grid filtering and show more / less logic |
@@ -102,6 +102,6 @@ Implementation notes:
 
 ## Asset Path Convention
 
-- `index.html` (root) — uses `assets/...`
-- Files inside `blog/` — use `../assets/...`
+- `index.html` (root) - uses `assets/...`
+- Files inside `blog/` - use `../assets/...`
 - `constant.js` must be loaded before `pkey.js` on blog/protected pages
