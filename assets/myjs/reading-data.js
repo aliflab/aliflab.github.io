@@ -6,7 +6,7 @@
 /* ─────────────────────────────────────────────────────────────
    1) AMAZON AFFILIATE TAG
    👉 PASTE YOUR AMAZON ASSOCIATES TAG BELOW (between the quotes).
-      Example: "thealiflab-20"
+      Example: "aliflab-20"
    Leave it as "YOUR_AFFILIATE_TAG" and no tag will be added yet
    (links still work, just without your affiliate attribution).
    ───────────────────────────────────────────────────────────── */

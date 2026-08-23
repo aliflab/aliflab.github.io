@@ -1,4 +1,4 @@
-# TheAlifLab — Personal Portfolio
+# AlifLab — Personal Portfolio
 
 Personal portfolio and blog website for Ahmed Alif Swopno, hosted on GitHub Pages.
 
