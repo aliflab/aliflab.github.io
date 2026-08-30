@@ -5724,20 +5724,6 @@ body.dark-mode .blog-empty { color: #6e7681; }
    READING PAGE — book cards (shares the site card design language)
    ============================================================== */
 
-/* Affiliate disclosure */
-.reading-disclosure {
-  font-family: "Poppins", sans-serif;
-  font-size: 12.5px;
-  color: #8a8f98;
-  text-align: center;
-  margin: 0 auto 34px;
-  max-width: 760px;
-}
-.reading-disclosure i {
-  color: #1089ff;
-  margin-right: 5px;
-}
-
 /* Grid */
 .reading-grid {
   display: grid;
@@ -5763,11 +5749,8 @@ body.dark-mode .blog-empty { color: #6e7681; }
 }
 
 /* Cover */
-.reading-cover-link {
-  display: block;
-  text-decoration: none;
-}
 .reading-cover-wrap {
+  position: relative;
   aspect-ratio: 3 / 4;
   overflow: hidden;
   background: #eef2f7;
@@ -5782,6 +5765,49 @@ body.dark-mode .blog-empty { color: #6e7681; }
   display: block;
   transition: transform 0.35s ease;
 }
+
+/* ── Highlight ring ─────────────────────────────────────────────────────────
+   Added by reading.js only when a book has photos in its `highlights` array.
+   The cover is a rectangle, not a circle, so the ring is a gradient frame:
+   the wrap paints the gradient and the padding lets it show around the image.
+   Same colour ramp as the hero story ring above.
+   Highlights never expire, so there is deliberately no dulled "seen" state. */
+.reading-cover-wrap.has-highlight {
+  padding: 4px;
+  background: conic-gradient(from 0deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #f09433);
+  cursor: pointer;
+}
+.reading-cover-wrap.has-highlight .reading-cover {
+  border-radius: 8px;
+  /* The light gap between the ring and the cover. */
+  box-shadow: 0 0 0 3px #fff;
+}
+.reading-cover-wrap.has-highlight:focus-visible {
+  outline: 2px solid #1089ff;
+  outline-offset: -2px;
+}
+
+/* Date pill — set per book via `highlightDate`, edit it whenever. */
+.reading-highlight-date {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 2;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.62);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+/* The highlight viewer header hides its thumbnail until a cover is set. */
+.story-avatar[hidden] { display: none; }
 .reading-card:hover .reading-cover {
   transform: scale(1.04);
 }
@@ -5857,32 +5883,6 @@ body.dark-mode .blog-empty { color: #6e7681; }
   flex: 1;
 }
 
-/* Amazon button */
-.reading-amazon-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: auto;
-  padding: 10px 18px;
-  border-radius: 24px;
-  background: #1089ff;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  letter-spacing: 0.2px;
-  transition: background 0.22s, box-shadow 0.22s, transform 0.22s;
-}
-.reading-amazon-btn:hover {
-  background: #0b6fd1;
-  color: #fff;
-  text-decoration: none;
-  box-shadow: 0 6px 18px rgba(16, 137, 255, 0.3);
-  transform: translateY(-2px);
-}
-
 /* Empty state */
 .reading-empty {
   text-align: center;
@@ -5892,7 +5892,6 @@ body.dark-mode .blog-empty { color: #6e7681; }
 }
 
 /* ── Dark mode ── */
-body.dark-mode .reading-disclosure { color: #6e7681; }
 body.dark-mode .reading-card {
   background: #161b22;
   border-color: rgba(255, 255, 255, 0.07);
@@ -5900,6 +5899,12 @@ body.dark-mode .reading-card {
 }
 body.dark-mode .reading-card:hover { border-color: #1089ff; }
 body.dark-mode .reading-cover-wrap { background: #21262d; }
+body.dark-mode .reading-cover-wrap.has-highlight {
+  background: conic-gradient(from 0deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #f09433);
+}
+body.dark-mode .reading-cover-wrap.has-highlight .reading-cover {
+  box-shadow: 0 0 0 3px #161b22;   /* matches the dark card background */
+}
 body.dark-mode .reading-title { color: #e6edf3; }
 body.dark-mode .reading-author { color: #8b949e; }
 body.dark-mode .reading-ratings { border-top-color: rgba(255, 255, 255, 0.08); }

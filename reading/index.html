@@ -136,12 +136,6 @@
   <section id="reading" class="padding-top">
     <div class="container">
 
-      <!-- Affiliate disclosure -->
-      <p class="reading-disclosure">
-        <i class="fa-solid fa-circle-info"></i>
-        As an Amazon Associate I earn from qualifying purchases. Some links on this page are affiliate links.
-      </p>
-
       <!-- Cards are rendered here from assets/myjs/reading-data.js -->
       <div class="reading-grid" id="reading-list"></div>
 
@@ -153,6 +147,26 @@
     </div>
   </section>
   <!--/#reading-->
+
+  <!-- Book Highlight Viewer (reuses the .story-* styles from the home page) -->
+  <div class="story-backdrop" id="rhBackdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Book highlights">
+    <div class="story-stage" id="rhStage">
+      <div class="story-bars" id="rhBars"></div>
+      <div class="story-head">
+        <img src="" alt="" class="story-avatar" id="rhAvatar" hidden>
+        <span class="story-author" id="rhTitle"></span>
+        <button type="button" class="story-mute" id="rhMute" aria-label="Unmute" hidden>
+          <i class="fa-solid fa-volume-xmark"></i>
+        </button>
+        <button type="button" class="story-close" id="rhClose" aria-label="Close highlights">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="story-media" id="rhMedia"></div>
+      <button type="button" class="story-nav story-prev" id="rhPrev" aria-label="Previous highlight"></button>
+      <button type="button" class="story-nav story-next" id="rhNext" aria-label="Next highlight"></button>
+    </div>
+  </div>
 
   <!--
    ===================
@@ -221,8 +235,10 @@
   <!-- Theme toggle -->
   <script src="../assets/myjs/theme-toggle.js"></script>
 
-  <!-- Reading data (edit this) + renderer -->
+  <!-- Reading data (edit this) + highlight viewer + renderer -->
+  <script src="../assets/myjs/story-player.js"></script>
   <script src="../assets/myjs/reading-data.js"></script>
+  <script src="../assets/myjs/reading-highlights.js"></script>
   <script src="../assets/myjs/reading.js"></script>
 
 </body>
