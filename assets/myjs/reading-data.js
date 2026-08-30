@@ -127,7 +127,18 @@ const READING_BOOKS = [
     coverImage: "../assets/images/reading/the-subtle-art.jpg",
     ratings: { content: 5, information: 5, writing: 4, overall: 4.6 },
     highlightDate: "",
-    highlights: []
+    highlights: [
+      {src: "../assets/images/reading/highlights/the-subtle-art/01.jpg"},
+      {src: "../assets/images/reading/highlights/the-subtle-art/02.jpg"},
+      {src: "../assets/images/reading/highlights/the-subtle-art/03.jpg"},
+      {src: "../assets/images/reading/highlights/the-subtle-art/04.jpg"},
+      {src: "../assets/images/reading/highlights/the-subtle-art/05.jpg"},
+      {src: "../assets/images/reading/highlights/the-subtle-art/06.jpg"},
+      {src: "../assets/images/reading/highlights/the-subtle-art/07.jpg"},
+      {src: "../assets/images/reading/highlights/the-subtle-art/08.jpg"},
+      {src: "../assets/images/reading/highlights/the-subtle-art/09.jpg"},
+      {src: "../assets/images/reading/highlights/the-subtle-art/10.jpg"}
+    ]
   },
   {
     title: "The Theory of Everything",
