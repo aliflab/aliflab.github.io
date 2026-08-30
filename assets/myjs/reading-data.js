@@ -131,7 +131,7 @@ const READING_BOOKS = [
       {src: "../assets/images/reading/highlights/the-subtle-art/01.jpg"},
       {src: "../assets/images/reading/highlights/the-subtle-art/02.jpg"},
       {src: "../assets/images/reading/highlights/the-subtle-art/03.jpg"},
-      {src: "../assets/images/reading/highlights/the-subtle-art/04.jpg"},
+      {src: "../assets/images/reading/highlights/the-subtle-art/04.mp4"},
       {src: "../assets/images/reading/highlights/the-subtle-art/05.jpg"},
       {src: "../assets/images/reading/highlights/the-subtle-art/06.jpg"},
       {src: "../assets/images/reading/highlights/the-subtle-art/07.jpg"},
