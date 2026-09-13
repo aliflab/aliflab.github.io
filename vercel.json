@@ -1,0 +1,12 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "statusCode": 301 },
+    { "source": "/blog/index.html", "destination": "/blog", "statusCode": 301 },
+    { "source": "/reading/index.html", "destination": "/reading", "statusCode": 301 },
+    { "source": "/projects/index.html", "destination": "/projects", "statusCode": 301 },
+    { "source": "/blog/:slug.html", "destination": "/blog/:slug", "statusCode": 301 },
+    { "source": "/projects/:slug.html", "destination": "/projects/:slug", "statusCode": 301 }
+  ]
+}
