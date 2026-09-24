@@ -28,3 +28,6 @@ wp-config.php
 .DS_Store
 
 CLAUDE.md
+
+# Claude Code worktrees
+.claude/worktrees/
