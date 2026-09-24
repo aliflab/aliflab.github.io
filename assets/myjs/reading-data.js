@@ -73,7 +73,22 @@ const READING_BOOKS = [
     coverImage: "../assets/images/reading/crushing-it.jpg",
     ratings: { content: 4, information: 5, writing: 3.5 },
     highlightDate: "",
-    highlights: []
+    highlights: [
+      {src: "../assets/images/reading/highlights/crushing-it/01.jpg"},
+      {src: "../assets/images/reading/highlights/crushing-it/02.jpg"},
+      {src: "../assets/images/reading/highlights/crushing-it/03.jpg"},
+      {src: "../assets/images/reading/highlights/crushing-it/04.jpg"},
+      {src: "../assets/images/reading/highlights/crushing-it/05.jpg"},
+      {src: "../assets/images/reading/highlights/crushing-it/06.jpg"},
+      {src: "../assets/images/reading/highlights/crushing-it/07.jpg"},
+      {src: "../assets/images/reading/highlights/crushing-it/08.jpg"},
+      {src: "../assets/images/reading/highlights/crushing-it/09.jpg"},
+      {src: "../assets/images/reading/highlights/crushing-it/10.jpg"},
+      {src: "../assets/images/reading/highlights/crushing-it/11.jpg"},
+      {src: "../assets/images/reading/highlights/crushing-it/12.jpg"},
+      {src: "../assets/images/reading/highlights/crushing-it/13.jpg"},
+      {src: "../assets/images/reading/highlights/crushing-it/14.jpg"}
+    ]
   },
   {
     title: "Eat That Frog!",
@@ -82,7 +97,16 @@ const READING_BOOKS = [
     coverImage: "../assets/images/reading/eat-that-frog.jpg",
     ratings: { content: 5, information: 5, writing: 5 },
     highlightDate: "",
-    highlights: []
+    highlights: [
+      {src: "../assets/images/reading/highlights/eat-that-frog/01.jpg"},
+      {src: "../assets/images/reading/highlights/eat-that-frog/02.jpg"},
+      {src: "../assets/images/reading/highlights/eat-that-frog/03.jpg"},
+      {src: "../assets/images/reading/highlights/eat-that-frog/04.jpg"},
+      {src: "../assets/images/reading/highlights/eat-that-frog/05.jpg"},
+      {src: "../assets/images/reading/highlights/eat-that-frog/06.jpg"},
+      {src: "../assets/images/reading/highlights/eat-that-frog/07.mp4"},
+      {src: "../assets/images/reading/highlights/eat-that-frog/08.jpg"}
+    ]
   },
   {
     title: "Google Guys",
