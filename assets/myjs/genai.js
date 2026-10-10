@@ -11,6 +11,14 @@
   var TOOLS = [
     // ── Tier 1 ──────────────────────────────────────────────────────────────────
     {
+      name: 'Claude Code', tier: 1, cat: 'coding',
+      logo: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/claudecode-color.png',
+      summary: 'Agentic AI coding tool operating directly in terminal and IDE.',
+      desc: 'Claude Code is Anthropic\'s agentic coding CLI that operates directly in the terminal and IDE, capable of reading codebases, writing and editing files, running commands, and completing multi-step development tasks autonomously. It provides a conversational interface to the entire development environment.',
+      usage: 'Used for agentic coding tasks directly in the terminal — including this website\'s development, implementing complex multi-file feature requests, automated refactoring workflows, and exploring codebases through natural language queries.',
+      cases: ['Multi-file codebase editing and refactoring from natural language instructions', 'Terminal-based agentic development and feature implementation', 'Automated implementation of complex multi-step coding tasks', 'Codebase exploration, architecture analysis, and technical documentation']
+    },
+    {
       name: 'Claude', tier: 1, cat: 'llm',
       logo: 'https://img.icons8.com/?size=100&id=zQjzFjPpT2Ek&format=png&color=000000',
       summary: 'Daily driver for AI workflows, API dev, and enterprise automation.',
@@ -37,15 +45,23 @@
       cases: ['Google Workspace tasks — Docs, Sheets, and Gmail drafting assistance', 'Real-time information retrieval grounded in current search data', 'Cross-model reasoning comparison for research validation', 'Multimodal document and image analysis']
     },
     {
-      name: 'Meta AI', tier: 2, cat: 'llm',
+      name: 'M365 Copilot', tier: 2, cat: 'agents',
+      logo: 'https://img.icons8.com/?size=100&id=PxQoyT1s0uFh&format=png&color=000000',
+      summary: 'Enterprise AI across Teams, Outlook, Word, and SharePoint.',
+      desc: 'Microsoft 365 Copilot embeds AI capabilities directly into the M365 suite — Teams, Outlook, Word, Excel, PowerPoint, and SharePoint — using the Microsoft Graph to deliver context-aware assistance grounded in organisational data. It represents the enterprise AI layer for organisations running on Microsoft infrastructure.',
+      usage: 'Deployed and administered M365 Copilot across the enterprise at H.Parsons. I design SharePoint environments for Copilot data readiness, manage information governance for AI access policies, and use Copilot daily for meeting summaries, email drafting, and document generation within Teams and Outlook.',
+      cases: ['Deploying and governing M365 Copilot across enterprise Microsoft 365 tenants', 'SharePoint architecture design for Copilot data readiness and permissions', 'Meeting summary extraction and action item generation in Teams', 'Automated document and proposal generation in Word and PowerPoint']
+    },
+
+    // ── Tier 3 ──────────────────────────────────────────────────────────────────
+    {
+      name: 'Meta AI', tier: 3, cat: 'llm',
       logo: 'https://img.icons8.com/?size=100&id=PvvcWRWxRKSR&format=png&color=000000',
       summary: 'Integrated into WhatsApp and Instagram for quick AI interactions.',
       desc: 'Meta AI is powered by the Llama family of open-weight models and is embedded natively into Meta\'s social platforms including WhatsApp, Instagram, and Facebook. It provides seamless conversational AI access within everyday communication channels without requiring a separate application.',
       usage: 'Used within WhatsApp for quick information lookups, calculations, and conversational queries during mobile-first workflows. Useful for reaching AI assistance without context switching while coordinating with teams on messaging platforms.',
       cases: ['Quick information lookups and Q&A within WhatsApp conversations', 'Image generation and description within Instagram workflows', 'Conversational AI during mobile-first and on-the-go tasks', 'Evaluating open-weight Llama model capabilities for self-hosted consideration']
     },
-
-    // ── Tier 3 ──────────────────────────────────────────────────────────────────
     {
       name: 'Perplexity', tier: 3, cat: 'llm',
       logo: 'https://img.icons8.com/?size=100&id=kzJWN5jCDzpq&format=png&color=000000',
@@ -54,22 +70,7 @@
       usage: 'My preferred tool for quick research requiring current data with citations — useful for staying updated on AI model releases, verifying facts before publishing documentation, and researching vendor products for enterprise IT procurement decisions.',
       cases: ['Research with citations for IT procurement and vendor comparisons', 'Staying current on AI model releases and technology news', 'Fact-checking content before publishing technical documentation', 'Quick technical reference and specification lookups']
     },
-    {
-      name: 'M365 Copilot', tier: 3, cat: 'agents',
-      logo: 'https://img.icons8.com/?size=100&id=PxQoyT1s0uFh&format=png&color=000000',
-      summary: 'Enterprise AI across Teams, Outlook, Word, and SharePoint.',
-      desc: 'Microsoft 365 Copilot embeds AI capabilities directly into the M365 suite — Teams, Outlook, Word, Excel, PowerPoint, and SharePoint — using the Microsoft Graph to deliver context-aware assistance grounded in organisational data. It represents the enterprise AI layer for organisations running on Microsoft infrastructure.',
-      usage: 'Deployed and administered M365 Copilot across the enterprise at H.Parsons. I design SharePoint environments for Copilot data readiness, manage information governance for AI access policies, and use Copilot daily for meeting summaries, email drafting, and document generation within Teams and Outlook.',
-      cases: ['Deploying and governing M365 Copilot across enterprise Microsoft 365 tenants', 'SharePoint architecture design for Copilot data readiness and permissions', 'Meeting summary extraction and action item generation in Teams', 'Automated document and proposal generation in Word and PowerPoint']
-    },
-    {
-      name: 'Grok', tier: 3, cat: 'llm',
-      logo: 'https://img.icons8.com/color/48/grok.png',
-      summary: 'Real-time X/Twitter data and unfiltered reasoning for analysis.',
-      desc: 'Grok is xAI\'s large language model integrated with the X platform, providing real-time access to trending topics, social media data, and public discourse. Grok 3 delivers competitive reasoning performance with a less restricted conversational style suited for exploratory thinking.',
-      usage: 'Used for tasks requiring real-time social data and trend monitoring. I use it to explore unconventional solution angles, monitor technology discourse on X, and compare reasoning performance against other frontier models for evaluation purposes.',
-      cases: ['Real-time trend monitoring and social data analysis on X', 'Exploring unfiltered perspectives on complex technical problems', 'Benchmarking reasoning against other frontier LLMs', 'Researching public discourse and reactions to technology announcements']
-    },
+    
     {
       name: 'DeepSeek', tier: 3, cat: 'llm',
       logo: 'https://img.icons8.com/color/48/deepseek.png',
@@ -80,6 +81,14 @@
     },
 
     // ── Tier 4 ──────────────────────────────────────────────────────────────────
+    {
+      name: 'Grok', tier: 4, cat: 'llm',
+      logo: 'https://img.icons8.com/color/48/grok.png',
+      summary: 'Real-time X/Twitter data and unfiltered reasoning for analysis.',
+      desc: 'Grok is xAI\'s large language model integrated with the X platform, providing real-time access to trending topics, social media data, and public discourse. Grok 3 delivers competitive reasoning performance with a less restricted conversational style suited for exploratory thinking.',
+      usage: 'Used for tasks requiring real-time social data and trend monitoring. I use it to explore unconventional solution angles, monitor technology discourse on X, and compare reasoning performance against other frontier models for evaluation purposes.',
+      cases: ['Real-time trend monitoring and social data analysis on X', 'Exploring unfiltered perspectives on complex technical problems', 'Benchmarking reasoning against other frontier LLMs', 'Researching public discourse and reactions to technology announcements']
+    },
     {
       name: 'Cursor', tier: 4, cat: 'coding',
       logo: 'https://img.icons8.com/color/48/cursor-ai.png',
@@ -113,14 +122,6 @@
       cases: ['MVP prototyping from product requirement descriptions in minutes', 'Generating React component structures and page layouts', 'Rapid front-end prototyping for client and stakeholder presentations', 'Exploring application architecture ideas before committing to a stack']
     },
     {
-      name: 'Bolt.new', tier: 4, cat: 'coding',
-      logo: 'https://cdn-1.webcatalog.io/catalog/bolt-new/bolt-new-icon-filled-256.webp?v=1730692903154',
-      summary: 'In-browser AI full-stack development using WebContainers.',
-      desc: 'Bolt.new by StackBlitz is an AI-powered browser-based development environment that generates, runs, and deploys full-stack web applications entirely in the browser using WebContainers technology. It supports Claude and GPT-4 as the backing AI for code generation with a full Node.js runtime in-browser.',
-      usage: 'Used for building and iterating on full-stack web applications directly in the browser without any local environment configuration, particularly for quick proof-of-concept builds and stakeholder demonstrations that need a running URL immediately.',
-      cases: ['Zero-setup full-stack web app development and deployment in the browser', 'Proof-of-concept builds for rapid stakeholder demonstrations', 'Iterating on web application designs with instant live preview', 'Deploying small tools to StackBlitz hosting without infrastructure overhead']
-    },
-    {
       name: 'v0 by Vercel', tier: 4, cat: 'coding',
       logo: 'https://img.icons8.com/?size=100&id=eXVvv0ElyhQy&format=png&color=000000',
       summary: 'AI UI component generation for React and Next.js projects.',
@@ -139,73 +140,7 @@
 
     // ── Tier 5 ──────────────────────────────────────────────────────────────────
     {
-      name: 'HeyGen', tier: 5, cat: 'video',
-      logo: 'https://img.icons8.com/?size=100&id=nYpTA1hyYtTK&format=png&color=000000',
-      summary: 'AI avatar video generation for professional presentations.',
-      desc: 'HeyGen is an AI video generation platform that creates realistic AI avatar videos from text scripts, supporting custom avatar creation, voice cloning, and multilingual video production. It removes the need for traditional recording setups for producing professional-looking presentation and explainer content.',
-      usage: 'Used experimentally for creating AI avatar-driven explainer videos and demo content for projects and personal branding. Evaluated for potential use in producing IT training and onboarding content at scale without traditional video production overhead.',
-      cases: ['Creating AI avatar explainer videos for project demonstrations', 'Generating multilingual training content without re-recording', 'Personal branding video content production', 'Evaluating AI video for enterprise training content delivery']
-    },
-    {
-      name: 'Synthesia', tier: 5, cat: 'video',
-      logo: 'https://img.icons8.com/?size=100&id=7TjmdSOn0P4R&format=png&color=000000',
-      summary: 'Enterprise-grade AI avatar videos from text scripts.',
-      desc: 'Synthesia is an enterprise AI video generation platform specialising in professional training and corporate communication videos using AI presenters across 140+ languages. It provides a polished, enterprise-grade alternative to HeyGen, widely adopted for L&D and internal communications.',
-      usage: 'Explored for creating training and onboarding video content for enterprise IT workflows, particularly for SOP walkthrough videos and knowledge base content that would otherwise require recorded screencasts or studio production.',
-      cases: ['IT training and onboarding video production at scale', 'SOP and procedure walkthrough video documentation', 'Corporate communication content for distributed teams', 'Multilingual IT training delivery across international teams']
-    },
-    {
-      name: 'Descript', tier: 5, cat: 'video',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Descript_%28Icon%29.svg/1920px-Descript_%28Icon%29.svg.png',
-      summary: 'AI video and podcast editing through text transcript manipulation.',
-      desc: 'Descript is an AI-powered media editing platform that enables video and audio editing through text transcript manipulation rather than traditional timeline editing. Features include Overdub voice cloning, automatic filler word removal, and AI-assisted clip generation for content repurposing.',
-      usage: 'Used for editing recorded video and audio content by manipulating the transcript — removing filler words, cutting sections, and generating short clips for social media distribution without traditional video editing expertise.',
-      cases: ['Transcript-based video editing for recorded presentations and demos', 'Automated filler word and silence removal from recordings', 'Creating short social clips from long-form recorded content', 'Podcast and audio content editing and cleanup']
-    },
-    {
-      name: 'Opus Clip', tier: 5, cat: 'video',
-      logo: 'https://avatars.githubusercontent.com/u/94627721?s=200&v=4',
-      summary: 'AI tool for clipping long videos into viral short-form content.',
-      desc: 'Opus Clip is an AI-powered video repurposing tool that automatically identifies the most engaging moments in long-form videos and transforms them into short-form clips optimised for TikTok, Instagram Reels, and YouTube Shorts with captions and framing applied automatically.',
-      usage: 'Used for repurposing long-form recorded content into short clips for social media distribution, maximising content reach from existing recordings with minimal manual editing effort and no additional production time.',
-      cases: ['Repurposing long videos into YouTube Shorts and Instagram Reels', 'Identifying key moments and highlights in recorded presentations', 'Building a social media content pipeline from existing video assets', 'Automating short-form content creation from webinars and talks']
-    },
-    {
-      name: 'Manus AI', tier: 5, cat: 'agents',
-      logo: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/manus.png',
-      summary: 'Fully autonomous AI agent for multi-step research and execution.',
-      desc: 'Manus is a fully autonomous AI agent capable of executing complex multi-step tasks including web research, data analysis, code execution, and file manipulation with minimal human intervention. It operates across browser, terminal, and file system environments to complete long-horizon tasks end-to-end.',
-      usage: 'Explored for automating multi-step research tasks, competitive analysis, and complex workflows requiring browsing, processing, and synthesising information from multiple sources into structured output without manual orchestration.',
-      cases: ['Autonomous multi-step research and structured report generation', 'Automated data gathering and analysis from multiple web sources', 'Complex task execution spanning browser and file system environments', 'Evaluating autonomous agent capabilities and failure modes for production use']
-    },
-    {
-      name: 'Jasper', tier: 5, cat: 'writing',
-      logo: 'https://vectorseek.com/wp-content/uploads/2024/01/Jasper-Logo-Vector.svg-.png',
-      summary: 'Enterprise AI writing platform for brand-consistent content.',
-      desc: 'Jasper is an enterprise AI writing platform designed for marketing and content teams, offering brand voice customisation, content templates, and AI writing assistance for long-form blog posts, social media content, and ad copy at scale. It includes workflow tools for collaborative content production.',
-      usage: 'Explored for generating marketing-style content with enforced brand voice consistency, particularly for project documentation, portfolio content, and professional write-ups requiring a specific tone.',
-      cases: ['Brand-consistent marketing and content generation at scale', 'Long-form blog post and article drafting and SEO optimisation', 'Social media content creation across multiple channels', 'Ad copy and email marketing sequence drafts']
-    },
-    {
-      name: 'Copy.ai', tier: 5, cat: 'writing',
-      logo: 'https://img.icons8.com/?size=100&id=tv7GSC4vCGHe&format=png&color=000000',
-      summary: 'AI copywriting for emails, social posts, and marketing content.',
-      desc: 'Copy.ai is an AI-powered copywriting tool generating marketing copy, email sequences, social media posts, and product descriptions. It includes workflow automation for content production pipelines and team collaboration tools for scaling content output.',
-      usage: 'Used occasionally for generating email copy, social media captions, and marketing material drafts when speed of content production is the priority over deep customisation.',
-      cases: ['Email sequence drafting and subject line optimisation', 'Social media caption and post generation across platforms', 'Product and feature description writing for documentation', 'Cold outreach and professional message drafting at volume']
-    },
-
-    // ── Tier 6 ──────────────────────────────────────────────────────────────────
-    {
-      name: 'Grammarly', tier: 6, cat: 'writing',
-      logo: 'https://img.icons8.com/color/48/grammarly.png',
-      summary: 'AI grammar, tone, and clarity assistant across all writing.',
-      desc: 'Grammarly is an AI writing assistant providing real-time grammar, spelling, clarity, and tone suggestions across browsers, email clients, and document editors. Its generative AI features assist with rewriting, tone adjustment, and conciseness improvements across all professional writing contexts.',
-      usage: 'Used as a passive writing assistant across email and documentation to catch grammatical errors, adjust tone formality, and improve clarity in professional communications sent to clients, stakeholders, and vendors.',
-      cases: ['Real-time grammar and clarity checking in emails and documents', 'Tone adjustment for professional communications and proposals', 'Browser-wide writing assistance across web-based tools', 'Proofreading and polishing IT documentation and SOPs']
-    },
-    {
-      name: 'NotebookLM', tier: 6, cat: 'writing',
+      name: 'NotebookLM', tier: 5, cat: 'writing',
       logo: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/notebooklm.png',
       summary: 'AI research assistant grounded exclusively in your documents.',
       desc: 'NotebookLM is Google\'s AI-powered research assistant that grounds all responses exclusively in user-uploaded source documents, enabling accurate Q&A, summarisation, and audio overviews without hallucination from external knowledge. It supports PDFs, documents, and web content as sources.',
@@ -213,7 +148,7 @@
       cases: ['Document-grounded Q&A on technical papers and vendor specifications', 'Summarising large PDF research materials and manuals', 'Generating audio podcast-style overviews of complex documents', 'Building research notes from multiple source documents simultaneously']
     },
     {
-      name: 'Notion AI', tier: 6, cat: 'writing',
+      name: 'Notion AI', tier: 5, cat: 'writing',
       logo: 'https://img.icons8.com/?size=100&id=wue74HqaylSJ&format=png&color=000000',
       summary: 'Inline AI writing and summarisation within Notion workspaces.',
       desc: 'Notion AI is the integrated AI assistant within Notion that provides inline writing assistance, document summarisation, translation, and workspace-aware Q&A. It understands the context of the entire workspace to deliver relevant, grounded assistance for knowledge management tasks.',
@@ -221,23 +156,7 @@
       cases: ['Summarising meeting notes and converting them to structured pages', 'Generating structured documentation from rough bullet-point notes', 'Translating and reformatting content within Notion databases', 'Automating repetitive documentation tasks across workspace pages']
     },
     {
-      name: 'Gamma', tier: 6, cat: 'writing',
-      logo: 'https://assets.website-files.com/60de2701a7b28f308f619d3d/6107f8275398b158684f03d8_256%20Gamma.png',
-      summary: 'AI presentation and document builder from prompts or outlines.',
-      desc: 'Gamma is an AI-powered tool that generates polished presentations, documents, and web pages from text prompts or structured outlines. It removes the need for manual slide design by automatically formatting, styling, and populating content into professional layouts ready to share.',
-      usage: 'Explored for quickly generating presentation decks from structured outlines, reducing time spent on slide formatting for project status updates, proposals, and stakeholder demonstrations.',
-      cases: ['Generating presentation decks from content outlines in minutes', 'Creating polished project proposals and status update presentations', 'Converting text documents into interactive web presentation formats', 'Rapid visualisation of ideas and concepts for stakeholder communication']
-    },
-    {
-      name: 'Suno', tier: 6, cat: 'video',
-      logo: 'https://make-cxp-documentation.ams3.digitaloceanspaces.com/apps-center-icons/suno.png',
-      summary: 'AI full-song generation with vocals and instrumentation from prompts.',
-      desc: 'Suno is an AI music generation platform that creates complete songs with vocals, instruments, and professional mixing from simple text prompts. It supports diverse genres and styles, enabling rapid music content creation without music production knowledge.',
-      usage: 'Explored for generating background music and jingles for video projects, demo content, and personal creative experiments — removing the need for royalty-free music searches for multimedia content.',
-      cases: ['Background music generation for video projects and presentations', 'Jingle and theme creation for project branding and demos', 'Exploring AI-generated audio for creative multimedia experiments', 'Rapid music prototyping for social media video content']
-    },
-    {
-      name: 'ElevenLabs', tier: 6, cat: 'video',
+      name: 'ElevenLabs', tier: 5, cat: 'video',
       logo: 'https://img.icons8.com/?size=100&id=K74MLFSfSJzy&format=png&color=000000',
       summary: 'Realistic AI voice cloning and text-to-speech synthesis.',
       desc: 'ElevenLabs is a leading AI voice synthesis platform offering highly realistic text-to-speech, voice cloning, automatic dubbing, and audio generation capabilities. It supports multiple languages and custom voice creation for professional-quality voiceovers and audio content production.',
@@ -245,23 +164,7 @@
       cases: ['Voiceover generation for explainer, demo, and training videos', 'Custom AI voice creation for branded and professional content', 'AI dubbing for multilingual video distribution', 'Text-to-speech for accessibility features and audio content production']
     },
     {
-      name: 'Pika Labs', tier: 6, cat: 'video',
-      logo: 'https://static.vecteezy.com/system/resources/previews/067/941/705/non_2x/pika-labs-symbol-rounded-hd-free-png.png',
-      summary: 'AI video generation from text and image prompts.',
-      desc: 'Pika Labs is an AI video generation platform that creates and edits short video clips from text descriptions and image inputs. It enables video generation with motion control, cinematic style application, and video extension capabilities for creative content production.',
-      usage: 'Explored for generating short AI video clips and animations for creative projects and understanding the current state of AI video generation quality for potential content pipeline integration.',
-      cases: ['Short video clip generation from text descriptions and images', 'Animating static images with AI-controlled motion', 'Creative visual content generation for social media', 'Evaluating AI video generation quality for content workflow integration']
-    },
-    {
-      name: 'Figma AI', tier: 6, cat: 'video',
-      logo: 'https://img.icons8.com/color/48/figma.png',
-      summary: 'AI-assisted UI design and content generation within Figma.',
-      desc: 'Figma AI integrates generative AI capabilities directly into the Figma design platform, including auto layout suggestions, content generation, prompt-to-UI creation, and AI-powered prototyping assistance. It accelerates the design workflow by reducing manual layout and content population work.',
-      usage: 'Used within Figma for accelerating UI design workflows on web and mobile projects, generating placeholder content for wireframes, and exploring design variations from natural language prompts.',
-      cases: ['AI-assisted UI component and layout design from prompts', 'Generating placeholder copy and imagery for design mockups', 'Design variation exploration and iteration from textual descriptions', 'Accelerating wireframe-to-high-fidelity prototype workflows']
-    },
-    {
-      name: 'Canva AI', tier: 6, cat: 'video',
+      name: 'Canva AI', tier: 5, cat: 'video',
       logo: 'https://img.icons8.com/color/48/canva.png',
       summary: 'AI design tools for quick social and marketing visuals in Canva.',
       desc: 'Canva AI integrates multiple generative AI features into the Canva platform including Magic Design, text-to-image generation, background removal, Magic Write for copy, and AI video generation. It makes professional visual content creation accessible without traditional design software expertise.',
@@ -269,7 +172,7 @@
       cases: ['Social media graphic and banner creation with AI design assistance', 'Quick presentation slide design from templates and AI suggestions', 'AI image generation for marketing visuals and content', 'Marketing material design without professional design tools']
     },
     {
-      name: 'Midjourney', tier: 6, cat: 'video',
+      name: 'Midjourney', tier: 5, cat: 'video',
       logo: 'https://img.icons8.com/color/48/midjourney.png',
       summary: 'Industry-leading AI image generation for artistic and photorealistic visuals.',
       desc: 'Midjourney is a leading AI image generation service known for producing exceptionally high-quality, artistic, and photorealistic images from text prompts. Accessed via Discord and a dedicated web interface, it consistently produces aesthetically superior results for creative and professional visual content.',
@@ -277,23 +180,7 @@
       cases: ['High-quality concept art and visual asset generation for projects', 'Presentation and portfolio imagery with distinctive aesthetic quality', 'Exploring photorealistic AI image generation for content pipelines', 'Creative direction exploration and visual mood board generation']
     },
     {
-      name: 'Runway', tier: 6, cat: 'video',
-      logo: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/runway-ai-icon.png',
-      summary: 'Professional AI video generation and creative media platform.',
-      desc: 'Runway is a professional AI creative platform offering Gen-3 Alpha video generation, video-to-video transformation, image generation, and AI-powered video effects. It is widely adopted in professional film and media production as the industry benchmark for AI-assisted creative video work.',
-      usage: 'Explored for high-quality AI video generation and evaluating the current state of text-to-video and image-to-video technology for potential integration into creative content production workflows.',
-      cases: ['High-quality text-to-video and image-to-video generation', 'AI video effects, style transfer, and post-production enhancement', 'Creative content production for digital media and marketing', 'Benchmarking professional-grade AI video generation capabilities']
-    },
-    {
-      name: 'Kling', tier: 6, cat: 'video',
-      logo: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/kling-color.png',
-      summary: 'AI video generation with strong motion realism and temporal consistency.',
-      desc: 'Kling is an AI video generation model by Kuaishou known for producing highly realistic motion in AI-generated videos with strong temporal consistency. It supports text-to-video and image-to-video generation, competing directly with Runway Gen-3 for motion quality.',
-      usage: 'Explored for its strong motion realism in video generation, comparing AI video quality and motion consistency across platforms to assess suitability for high-fidelity video content production.',
-      cases: ['Realistic motion video generation from text and image prompts', 'Animating images with natural, temporally consistent movement', 'Comparing AI video generation quality across leading platforms', 'Creative video content experimentation and capability evaluation']
-    },
-    {
-      name: 'Zapier', tier: 6, cat: 'automation',
+      name: 'Zapier', tier: 5, cat: 'automation',
       logo: 'https://img.icons8.com/color/48/zapier.png',
       summary: 'No-code workflow automation connecting thousands of SaaS apps.',
       desc: 'Zapier is a no-code automation platform connecting thousands of web applications through automated workflows called Zaps. Its AI features enable natural language workflow creation and AI-powered data transformation steps within multi-app automation pipelines.',
@@ -301,36 +188,70 @@
       cases: ['Automating data flows and triggers between SaaS applications', 'Cross-platform workflow automation without writing code', 'AI-powered data transformation and routing in multi-app pipelines', 'Evaluating no-code automation suitability for enterprise integration scenarios']
     },
     {
-      name: 'n8n', tier: 6, cat: 'automation',
+      name: 'n8n', tier: 5, cat: 'automation',
       logo: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/n8n-color.png',
       summary: 'Open-source self-hostable automation with AI agent node support.',
       desc: 'n8n is a self-hostable open-source workflow automation platform with a visual node editor supporting complex multi-step workflows, LLM integration nodes, and deep customisation. Its open-source model enables full data control and custom integrations critical for enterprise data residency requirements.',
       usage: 'Explored for building self-hosted AI automation workflows with full data sovereignty, particularly for enterprise contexts requiring on-premise data processing and integration with internal systems.',
       cases: ['Self-hosted AI workflow automation with full data control and residency', 'Complex multi-step automation with custom business logic', 'Building AI agent workflows integrating LLMs with internal systems', 'Enterprise automation requiring on-premise or private cloud deployment']
     },
+
+    // ── Tier 6 ──────────────────────────────────────────────────────────────────
     {
-      name: 'Make', tier: 6, cat: 'automation',
-      logo: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/make-color.png',
-      summary: 'Visual workflow automation with advanced data routing and transformation.',
-      desc: 'Make (formerly Integromat) is a visual automation platform enabling complex multi-step workflows with advanced data transformation, conditional routing, and error handling. It supports hundreds of app integrations and AI-powered action steps with a more powerful visual editor than Zapier.',
-      usage: 'Explored for building visually complex automation scenarios with advanced data routing and transformation requirements that exceed simpler no-code tools. Evaluated for potential enterprise automation use cases.',
-      cases: ['Complex data transformation and multi-branch routing workflows', 'Advanced automation scenarios with conditional logic and error handling', 'Integrating external APIs with visual workflow design', 'Building sophisticated cross-platform automation with fine-grained control']
+      name: 'HeyGen', tier: 6, cat: 'video',
+      logo: 'https://img.icons8.com/?size=100&id=nYpTA1hyYtTK&format=png&color=000000',
+      summary: 'AI avatar video generation for professional presentations.',
+      desc: 'HeyGen is an AI video generation platform that creates realistic AI avatar videos from text scripts, supporting custom avatar creation, voice cloning, and multilingual video production. It removes the need for traditional recording setups for producing professional-looking presentation and explainer content.',
+      usage: 'Used experimentally for creating AI avatar-driven explainer videos and demo content for projects and personal branding. Evaluated for potential use in producing IT training and onboarding content at scale without traditional video production overhead.',
+      cases: ['Creating AI avatar explainer videos for project demonstrations', 'Generating multilingual training content without re-recording', 'Personal branding video content production', 'Evaluating AI video for enterprise training content delivery']
     },
     {
-      name: 'Claude Code', tier: 6, cat: 'coding',
-      logo: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/claudecode-color.png',
-      summary: 'Agentic AI coding tool operating directly in terminal and IDE.',
-      desc: 'Claude Code is Anthropic\'s agentic coding CLI that operates directly in the terminal and IDE, capable of reading codebases, writing and editing files, running commands, and completing multi-step development tasks autonomously. It provides a conversational interface to the entire development environment.',
-      usage: 'Used for agentic coding tasks directly in the terminal — including this website\'s development, implementing complex multi-file feature requests, automated refactoring workflows, and exploring codebases through natural language queries.',
-      cases: ['Multi-file codebase editing and refactoring from natural language instructions', 'Terminal-based agentic development and feature implementation', 'Automated implementation of complex multi-step coding tasks', 'Codebase exploration, architecture analysis, and technical documentation']
+      name: 'Synthesia', tier: 6, cat: 'video',
+      logo: 'https://img.icons8.com/?size=100&id=7TjmdSOn0P4R&format=png&color=000000',
+      summary: 'Enterprise-grade AI avatar videos from text scripts.',
+      desc: 'Synthesia is an enterprise AI video generation platform specialising in professional training and corporate communication videos using AI presenters across 140+ languages. It provides a polished, enterprise-grade alternative to HeyGen, widely adopted for L&D and internal communications.',
+      usage: 'Explored for creating training and onboarding video content for enterprise IT workflows, particularly for SOP walkthrough videos and knowledge base content that would otherwise require recorded screencasts or studio production.',
+      cases: ['IT training and onboarding video production at scale', 'SOP and procedure walkthrough video documentation', 'Corporate communication content for distributed teams', 'Multilingual IT training delivery across international teams']
     },
     {
-      name: 'Voiceflow', tier: 6, cat: 'agents',
-      logo: 'https://camo.githubusercontent.com/af82a0c6711cdd7d0af22cd01a087bd23bcc933c5b6fb9d72fb6c34e0c89441c/68747470733a2f2f63646e2e766f696365666c6f772e636f6d2f6173736574732f6c6f676f2e706e67',
-      summary: 'No-code conversational AI agent and chatbot builder platform.',
-      desc: 'Voiceflow is a collaborative platform for building, testing, and deploying conversational AI agents and chatbots without code. It supports multi-channel deployment including web chat, voice, and messaging platforms through a visual dialogue flow designer with LLM integration capabilities.',
-      usage: 'Explored for building and prototyping conversational AI agents with visual dialogue design, evaluating its capabilities for deploying AI assistants in enterprise IT support and helpdesk automation contexts.',
-      cases: ['Building conversational AI agent prototypes without code', 'Designing multi-turn dialogue flows for helpdesk chatbots', 'Deploying AI assistants across web chat and messaging channels', 'Evaluating no-code agent builders for enterprise support automation']
+      name: 'Descript', tier: 6, cat: 'video',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Descript_%28Icon%29.svg/1920px-Descript_%28Icon%29.svg.png',
+      summary: 'AI video and podcast editing through text transcript manipulation.',
+      desc: 'Descript is an AI-powered media editing platform that enables video and audio editing through text transcript manipulation rather than traditional timeline editing. Features include Overdub voice cloning, automatic filler word removal, and AI-assisted clip generation for content repurposing.',
+      usage: 'Used for editing recorded video and audio content by manipulating the transcript — removing filler words, cutting sections, and generating short clips for social media distribution without traditional video editing expertise.',
+      cases: ['Transcript-based video editing for recorded presentations and demos', 'Automated filler word and silence removal from recordings', 'Creating short social clips from long-form recorded content', 'Podcast and audio content editing and cleanup']
+    },
+    {
+      name: 'Opus Clip', tier: 6, cat: 'video',
+      logo: 'https://avatars.githubusercontent.com/u/94627721?s=200&v=4',
+      summary: 'AI tool for clipping long videos into viral short-form content.',
+      desc: 'Opus Clip is an AI-powered video repurposing tool that automatically identifies the most engaging moments in long-form videos and transforms them into short-form clips optimised for TikTok, Instagram Reels, and YouTube Shorts with captions and framing applied automatically.',
+      usage: 'Used for repurposing long-form recorded content into short clips for social media distribution, maximising content reach from existing recordings with minimal manual editing effort and no additional production time.',
+      cases: ['Repurposing long videos into YouTube Shorts and Instagram Reels', 'Identifying key moments and highlights in recorded presentations', 'Building a social media content pipeline from existing video assets', 'Automating short-form content creation from webinars and talks']
+    },
+    {
+      name: 'Jasper', tier: 6, cat: 'writing',
+      logo: 'https://vectorseek.com/wp-content/uploads/2024/01/Jasper-Logo-Vector.svg-.png',
+      summary: 'Enterprise AI writing platform for brand-consistent content.',
+      desc: 'Jasper is an enterprise AI writing platform designed for marketing and content teams, offering brand voice customisation, content templates, and AI writing assistance for long-form blog posts, social media content, and ad copy at scale. It includes workflow tools for collaborative content production.',
+      usage: 'Explored for generating marketing-style content with enforced brand voice consistency, particularly for project documentation, portfolio content, and professional write-ups requiring a specific tone.',
+      cases: ['Brand-consistent marketing and content generation at scale', 'Long-form blog post and article drafting and SEO optimisation', 'Social media content creation across multiple channels', 'Ad copy and email marketing sequence drafts']
+    },
+    {
+      name: 'Copy.ai', tier: 6, cat: 'writing',
+      logo: 'https://img.icons8.com/?size=100&id=tv7GSC4vCGHe&format=png&color=000000',
+      summary: 'AI copywriting for emails, social posts, and marketing content.',
+      desc: 'Copy.ai is an AI-powered copywriting tool generating marketing copy, email sequences, social media posts, and product descriptions. It includes workflow automation for content production pipelines and team collaboration tools for scaling content output.',
+      usage: 'Used occasionally for generating email copy, social media captions, and marketing material drafts when speed of content production is the priority over deep customisation.',
+      cases: ['Email sequence drafting and subject line optimisation', 'Social media caption and post generation across platforms', 'Product and feature description writing for documentation', 'Cold outreach and professional message drafting at volume']
+    },
+    {
+      name: 'Manus AI', tier: 6, cat: 'agents',
+      logo: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/manus.png',
+      summary: 'Fully autonomous AI agent for multi-step research and execution.',
+      desc: 'Manus is a fully autonomous AI agent capable of executing complex multi-step tasks including web research, data analysis, code execution, and file manipulation with minimal human intervention. It operates across browser, terminal, and file system environments to complete long-horizon tasks end-to-end.',
+      usage: 'Explored for automating multi-step research tasks, competitive analysis, and complex workflows requiring browsing, processing, and synthesising information from multiple sources into structured output without manual orchestration.',
+      cases: ['Autonomous multi-step research and structured report generation', 'Automated data gathering and analysis from multiple web sources', 'Complex task execution spanning browser and file system environments', 'Evaluating autonomous agent capabilities and failure modes for production use']
     }
   ];
 
