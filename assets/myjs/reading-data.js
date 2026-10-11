@@ -220,10 +220,18 @@ const READING_BOOKS = [
     title: "Who Moved My Cheese?",
     author: "Spencer Johnson",
     slug: "who-moved-my-cheese",
-    coverImage: "../assets/images/reading/who-moved-my-cheese.jpg",
+    coverImage: "../assets/images/reading/who-moved-my-cheese.png",
     ratings: { content: 5, information: 4, writing: 5, overall: 4.7 },
     highlightDate: "",
-    highlights: []
+    highlights: [
+      {src: "../assets/images/reading/highlights/who-moved-my-cheese/01.jpg"},
+      {src: "../assets/images/reading/highlights/who-moved-my-cheese/02.jpg"},
+      {src: "../assets/images/reading/highlights/who-moved-my-cheese/03.jpg"},
+      {src: "../assets/images/reading/highlights/who-moved-my-cheese/04.jpg"},
+      {src: "../assets/images/reading/highlights/who-moved-my-cheese/05.jpg"},
+      {src: "../assets/images/reading/highlights/who-moved-my-cheese/06.jpg"},
+      {src: "../assets/images/reading/highlights/who-moved-my-cheese/07.jpg"}
+    ]
   },
   {
     title: "Start with Why",
