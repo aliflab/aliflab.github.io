@@ -255,5 +255,20 @@ const READING_BOOKS = [
       {src: "../assets/images/reading/highlights/start-with-why/12.jpg"},
       {src: "../assets/images/reading/highlights/start-with-why/13.jpg"}
     ]
+  },
+  {
+    title: "The Richest Man in Babylon",
+    author: "George S. Clason",
+    slug: "the-richest-man-in-the-babylon",
+    coverImage: "../assets/images/reading/the-richest-man-in-the-babylon.jpeg",
+    ratings: {},
+    highlightDate: "",
+    highlights: [
+      {src: "../assets/images/reading/highlights/the-richest-man-in-the-babylon/01.jpg"},
+      {src: "../assets/images/reading/highlights/the-richest-man-in-the-babylon/02.jpg"},
+      {src: "../assets/images/reading/highlights/the-richest-man-in-the-babylon/03.jpg"},
+      {src: "../assets/images/reading/highlights/the-richest-man-in-the-babylon/04.jpg"},
+      {src: "../assets/images/reading/highlights/the-richest-man-in-the-babylon/05.jpg"}
+    ]
   }
 ];
