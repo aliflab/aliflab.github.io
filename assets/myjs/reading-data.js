@@ -12,7 +12,7 @@
                                  book's highlight folder under
                                  assets/images/reading/highlights/
      coverImage    (required)  — path to a cover image, e.g.
-                                 "../assets/images/reading/atomic-habits.jpg"
+                                 "../assets/images/reading/atomic-habits.jpeg"
                                  (drop your cover files in that folder)
      ratings       (required)  — your scores out of 5. Include only the
                                  categories you have; missing rows are hidden:
@@ -48,7 +48,7 @@ const READING_BOOKS = [
     title: "Atomic Habits",
     author: "James Clear",
     slug: "atomic-habits",
-    coverImage: "../assets/images/reading/atomic-habits.jpg",
+    coverImage: "../assets/images/reading/atomic-habits.jpeg",
     ratings: { content: 4, information: 5, writing: 4, overall: 4.5 },
     highlightDate: "",
     highlights: [
@@ -61,7 +61,7 @@ const READING_BOOKS = [
     title: "Blue Ocean Strategy",
     author: "W. Chan Kim & Renée Mauborgne",
     slug: "blue-ocean-strategy",
-    coverImage: "../assets/images/reading/blue-ocean-strategy.jpg",
+    coverImage: "../assets/images/reading/blue-ocean-strategy.jpeg",
     ratings: { content: 5, information: 4, writing: 3, overall: 4 },
     highlightDate: "",
     highlights: []
@@ -169,7 +169,7 @@ const READING_BOOKS = [
     title: "The Design of Everyday Things",
     author: "Don Norman",
     slug: "the-design-of-everyday-things",
-    coverImage: "../assets/images/reading/the-design-of-everyday-things.jpg",
+    coverImage: "../assets/images/reading/the-design-of-everyday-things.jpeg",
     ratings: { content: 5, information: 5, writing: 5, overall: 5 },
     highlightDate: "",
     highlights: []
