@@ -62,7 +62,7 @@ const READING_BOOKS = [
     author: "W. Chan Kim & Renée Mauborgne",
     slug: "blue-ocean-strategy",
     coverImage: "../assets/images/reading/blue-ocean-strategy.jpg",
-    ratings: { content: 5, information: 4, writing: 3 },
+    ratings: { content: 5, information: 4, writing: 3, overall: 4 },
     highlightDate: "",
     highlights: []
   },
@@ -71,7 +71,7 @@ const READING_BOOKS = [
     author: "Gary Vaynerchuk",
     slug: "crushing-it",
     coverImage: "../assets/images/reading/crushing-it.jpg",
-    ratings: { content: 4, information: 5, writing: 3.5 },
+    ratings: { content: 4, information: 5, writing: 3.5, overall: 4.2 },
     highlightDate: "",
     highlights: [
       {src: "../assets/images/reading/highlights/crushing-it/01.jpg"},
@@ -95,7 +95,7 @@ const READING_BOOKS = [
     author: "Brian Tracy",
     slug: "eat-that-frog",
     coverImage: "../assets/images/reading/eat-that-frog.jpg",
-    ratings: { content: 5, information: 5, writing: 5 },
+    ratings: { content: 5, information: 5, writing: 5, overall: 5 },
     highlightDate: "",
     highlights: [
       {src: "../assets/images/reading/highlights/eat-that-frog/01.jpg"},
@@ -149,7 +149,7 @@ const READING_BOOKS = [
     author: "Paulo Coelho",
     slug: "the-alchemist",
     coverImage: "../assets/images/reading/the-alchemist.jpeg",
-    ratings: { content: 5, information: 5, writing: 5, story: 4.5 },
+    ratings: { content: 5, information: 5, writing: 5, story: 4.5, overall: 4.9 },
     highlightDate: "",
     highlights: [
       {src: "../assets/images/reading/highlights/the-alchemist/01.jpg"},
@@ -198,17 +198,30 @@ const READING_BOOKS = [
     title: "The Theory of Everything",
     author: "Stephen Hawking",
     slug: "the-theory-of-everything",
-    coverImage: "../assets/images/reading/the-theory-of-everything.jpg",
-    ratings: { content: 3, information: 4, writing: 3 },
+    coverImage: "../assets/images/reading/the-theory-of-everything.jpeg",
+    ratings: { content: 3, information: 4, writing: 3, overall: 3.3 },
     highlightDate: "",
-    highlights: []
+    highlights: [
+      {src: "../assets/images/reading/highlights/the-theory-of-everything/01.jpg"},
+      {src: "../assets/images/reading/highlights/the-theory-of-everything/02.jpg"},
+      {src: "../assets/images/reading/highlights/the-theory-of-everything/03.jpg"},
+      {src: "../assets/images/reading/highlights/the-theory-of-everything/04.jpg"},
+      {src: "../assets/images/reading/highlights/the-theory-of-everything/05.jpg"},
+      {src: "../assets/images/reading/highlights/the-theory-of-everything/06.jpg"},
+      {src: "../assets/images/reading/highlights/the-theory-of-everything/07.jpg"},
+      {src: "../assets/images/reading/highlights/the-theory-of-everything/08.mp4"},
+      {src: "../assets/images/reading/highlights/the-theory-of-everything/09.jpg"},
+      {src: "../assets/images/reading/highlights/the-theory-of-everything/10.jpg"},
+      {src: "../assets/images/reading/highlights/the-theory-of-everything/11.jpg"},
+      {src: "../assets/images/reading/highlights/the-theory-of-everything/12.jpg"}
+    ]
   },
   {
     title: "Who Moved My Cheese?",
     author: "Spencer Johnson",
     slug: "who-moved-my-cheese",
     coverImage: "../assets/images/reading/who-moved-my-cheese.jpg",
-    ratings: { content: 5, information: 4, writing: 5 },
+    ratings: { content: 5, information: 4, writing: 5, overall: 4.7 },
     highlightDate: "",
     highlights: []
   },
