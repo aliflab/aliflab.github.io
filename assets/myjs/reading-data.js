@@ -181,5 +181,28 @@ const READING_BOOKS = [
     ratings: { content: 5, information: 4, writing: 5 },
     highlightDate: "",
     highlights: []
+  },
+  {
+    title: "Start with Why",
+    author: "Simon Sinek",
+    slug: "start-with-why",
+    coverImage: "../assets/images/reading/start-with-why.jpg",
+    ratings: { content: 5, information: 4.5, writing: 5, overall: 4.8 },
+    highlightDate: "",
+    highlights: [
+      {src: "../assets/images/reading/highlights/start-with-why/01.jpg"},
+      {src: "../assets/images/reading/highlights/start-with-why/02.jpg"},
+      {src: "../assets/images/reading/highlights/start-with-why/03.jpg"},
+      {src: "../assets/images/reading/highlights/start-with-why/04.mp4"},
+      {src: "../assets/images/reading/highlights/start-with-why/05.mp4"},
+      {src: "../assets/images/reading/highlights/start-with-why/06.jpg"},
+      {src: "../assets/images/reading/highlights/start-with-why/07.jpg"},
+      {src: "../assets/images/reading/highlights/start-with-why/08.jpg"},
+      {src: "../assets/images/reading/highlights/start-with-why/09.jpg"},
+      {src: "../assets/images/reading/highlights/start-with-why/10.jpg"},
+      {src: "../assets/images/reading/highlights/start-with-why/11.jpg"},
+      {src: "../assets/images/reading/highlights/start-with-why/12.jpg"},
+      {src: "../assets/images/reading/highlights/start-with-why/13.jpg"}
+    ]
   }
 ];
