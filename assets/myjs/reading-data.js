@@ -128,10 +128,21 @@ const READING_BOOKS = [
     title: "How to Win Friends and Influence People",
     author: "Dale Carnegie",
     slug: "how-to-win-friends-and-influence-people",
-    coverImage: "../assets/images/reading/how-to-win-friends-and-influence-people.jpg",
+    coverImage: "../assets/images/reading/how-to-win-friends-and-influence-people.jpeg",
     ratings: { content: 4.5, information: 4.5, writing: 5, overall: 4.9 },
     highlightDate: "",
-    highlights: []
+    highlights: [
+      {src: "../assets/images/reading/highlights/how-to-win-friends-and-influence-people/01.jpg"},
+      {src: "../assets/images/reading/highlights/how-to-win-friends-and-influence-people/02.jpg"},
+      {src: "../assets/images/reading/highlights/how-to-win-friends-and-influence-people/03.jpg"},
+      {src: "../assets/images/reading/highlights/how-to-win-friends-and-influence-people/04.jpg"},
+      {src: "../assets/images/reading/highlights/how-to-win-friends-and-influence-people/05.jpg"},
+      {src: "../assets/images/reading/highlights/how-to-win-friends-and-influence-people/06.jpg"},
+      {src: "../assets/images/reading/highlights/how-to-win-friends-and-influence-people/07.jpg"},
+      {src: "../assets/images/reading/highlights/how-to-win-friends-and-influence-people/08.jpg"},
+      {src: "../assets/images/reading/highlights/how-to-win-friends-and-influence-people/09.jpg"},
+      {src: "../assets/images/reading/highlights/how-to-win-friends-and-influence-people/10.jpg"}
+    ]
   },
   {
     title: "The Alchemist",
