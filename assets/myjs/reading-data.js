@@ -130,10 +130,22 @@ const READING_BOOKS = [
     title: "The Alchemist",
     author: "Paulo Coelho",
     slug: "the-alchemist",
-    coverImage: "../assets/images/reading/the-alchemist.jpg",
+    coverImage: "../assets/images/reading/the-alchemist.jpeg",
     ratings: { content: 5, information: 5, writing: 5, story: 4.5 },
     highlightDate: "",
-    highlights: []
+    highlights: [
+      {src: "../assets/images/reading/highlights/the-alchemist/01.jpg"},
+      {src: "../assets/images/reading/highlights/the-alchemist/02.jpg"},
+      {src: "../assets/images/reading/highlights/the-alchemist/03.jpg"},
+      {src: "../assets/images/reading/highlights/the-alchemist/04.jpg"},
+      {src: "../assets/images/reading/highlights/the-alchemist/05.jpg"},
+      {src: "../assets/images/reading/highlights/the-alchemist/06.jpg"},
+      {src: "../assets/images/reading/highlights/the-alchemist/07.jpg"},
+      {src: "../assets/images/reading/highlights/the-alchemist/08.jpg"},
+      {src: "../assets/images/reading/highlights/the-alchemist/09.jpg"},
+      {src: "../assets/images/reading/highlights/the-alchemist/10.jpg"},
+      {src: "../assets/images/reading/highlights/the-alchemist/11.jpg"}
+    ]
   },
   {
     title: "The Design of Everyday Things",
