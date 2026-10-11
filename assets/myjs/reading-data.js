@@ -112,10 +112,17 @@ const READING_BOOKS = [
     title: "Google Guys",
     author: "Richard L. Brandt",
     slug: "google-guys",
-    coverImage: "../assets/images/reading/google-guys.jpg",
+    coverImage: "../assets/images/reading/google-guys.jpeg",
     ratings: { content: 3, information: 4, writing: 4, overall: 3.5 },
     highlightDate: "",
-    highlights: []
+    highlights: [
+      {src: "../assets/images/reading/highlights/google-guys/01.jpg"},
+      {src: "../assets/images/reading/highlights/google-guys/02.jpg"},
+      {src: "../assets/images/reading/highlights/google-guys/03.jpg"},
+      {src: "../assets/images/reading/highlights/google-guys/04.jpg"},
+      {src: "../assets/images/reading/highlights/google-guys/05.jpg"},
+      {src: "../assets/images/reading/highlights/google-guys/06.jpg"}
+    ]
   },
   {
     title: "How to Win Friends and Influence People",
