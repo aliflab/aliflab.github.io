@@ -261,7 +261,7 @@ const READING_BOOKS = [
     author: "George S. Clason",
     slug: "the-richest-man-in-the-babylon",
     coverImage: "../assets/images/reading/the-richest-man-in-the-babylon.jpeg",
-    ratings: {},
+    ratings: { content: 3, information: 4, writing: 3, overall: 3.3 },
     highlightDate: "",
     highlights: [
       {src: "../assets/images/reading/highlights/the-richest-man-in-the-babylon/01.jpg"},
