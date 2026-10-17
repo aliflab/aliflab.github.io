@@ -746,6 +746,28 @@
           </div>
           <div class="proj-grid wow fadeInUp" id="proj-grid" data-wow-duration="0.8s" data-wow-delay="0.3s">
 
+            <!-- Project: MuBWeM -->
+            <div class="proj-card" data-filter-class="web"
+                 data-title="MuBWeM (Multi-Brand Website Monitor)"
+                 data-category="Cloud Web App"
+                 data-desc="MuBWeM monitors many websites across several brands from one dashboard. Each monitor has a 24 hour bar with one segment per hour: green means every check passed, yellow means a failure below the incident threshold, red means an incident (three or more failures in a row), and gray means no data. The dashboard also shows a countdown to the next check, overall uptime, mean time between failures, incident count, and search, status, and brand filters. Login uses Cognito with Admin, Editor, and Viewer roles, and the dashboard is internal by default with no public status page. Alerts are sent as HTML email through SES, with SNS plain text as a fallback. It runs entirely in your own AWS account with no third party monitoring service, and the whole stack deploys from AWS CDK in Python. The project is in active development (2026) and I am currently working on integrations."
+                 data-tags="AWS Lambda,EventBridge Scheduler,DynamoDB,API Gateway,Cognito,CloudFront,S3,SES,SNS,AWS CDK (Python)"
+                 data-img="assets/images/project/mubwem.png"
+                 data-github="https://github.com/aliflab/mubwem"
+                 data-github-label="View on GitHub">
+              <div class="proj-card-img-wrap">
+                <img src="assets/images/project/mubwem.png" alt="MuBWeM" class="proj-card-img">
+                <div class="proj-card-overlay"><button class="proj-view-btn">View Details</button></div>
+              </div>
+              <div class="proj-card-body">
+                <h4 class="proj-card-title">MuBWeM</h4>
+                <p class="proj-card-desc">A self hosted website uptime monitor on AWS, in the style of UptimeRobot. It checks every monitor every 60 seconds and sends an email alert after three failures in a row.</p>
+                <div class="proj-card-tags">
+                  <span class="proj-tag">AWS</span><span class="proj-tag">Python</span><span class="proj-tag">CDK</span>
+                </div>
+              </div>
+            </div>
+
             <!-- Project 1 -->
             <div class="proj-card" data-filter-class="web"
                  data-title="A2Resume"
