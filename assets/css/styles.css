@@ -4852,7 +4852,7 @@ BLOG Single Post Pagination
 }
 
 /* =============================================
-   GenAI Stack — Visual Pyramid
+   GenAI — AI Tier List (S–F)
    ============================================= */
 
 .genai-subheading {
@@ -4861,54 +4861,108 @@ BLOG Single Post Pagination
   margin: -6px 0 0;
 }
 
-/* Pyramid wrapper */
-.genai-pyramid-wrap {
+/* Board wrapper — theme tokens swapped in dark mode */
+.genai-tierlist {
+  --tl-surface: #f6f8fa;
+  --tl-border: rgba(0,0,0,0.08);
+  --tl-card-bg: #fff;
+  --tl-name: #2c3e50;
+  --tl-label-text: #1f2328;
   width: 100%;
-  overflow: visible;
   margin: 28px 0 0;
+  border: 1px solid var(--tl-border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
 }
+
+/* Label colours per tier */
+.genai-tier-row[data-tier="S"] { --tier-color: #ff7f7f; }
+.genai-tier-row[data-tier="A"] { --tier-color: #ffbf7f; }
+.genai-tier-row[data-tier="B"] { --tier-color: #ffdf7f; }
+.genai-tier-row[data-tier="C"] { --tier-color: #f5e663; }
+.genai-tier-row[data-tier="D"] { --tier-color: #bfff7f; }
+.genai-tier-row[data-tier="E"] { --tier-color: #7fdfff; }
+.genai-tier-row[data-tier="F"] { --tier-color: #b3a6ff; }
 
 /* Each tier row */
-.genai-pyr-row {
+.genai-tier-row {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background: var(--row-bg, transparent);
-  overflow: visible;
+  align-items: stretch;
+  border-bottom: 1px solid var(--tl-border);
 }
 
-.genai-pyr-row:first-child { border-radius: 14px 14px 0 0; }
-.genai-pyr-row:last-child  { border-radius: 0 0 14px 14px; }
+.genai-tier-row:last-child { border-bottom: none; }
 
-/* Individual tool block */
-.genai-pyr-block {
-  position: relative;
+/* Tier letter */
+.genai-tier-label {
+  flex: 0 0 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--tier-color);
+  color: var(--tl-label-text);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Items area */
+.genai-tier-items {
+  flex: 1;
+  min-width: 0;
+  min-height: 104px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: center;
+  gap: 10px;
+  padding: 12px;
+  background: var(--tl-surface);
+}
+
+/* Individual tool card */
+.genai-tier-card {
+  width: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 12px;
+  transition: transform 0.18s ease;
+}
+
+.genai-tier-card:hover,
+.genai-tier-card:focus {
+  transform: translateY(-4px);
+}
+
+.genai-tier-tile {
   width: 56px;
   height: 56px;
-  flex-shrink: 0;
   border-radius: 12px;
-  background: #fff;
+  background: var(--tl-card-bg);
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  outline: none;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  z-index: 1;
+  transition: box-shadow 0.18s ease;
 }
 
-.genai-pyr-block:hover,
-.genai-pyr-block:focus {
-  transform: translateY(-5px) scale(1.14);
+.genai-tier-card:hover .genai-tier-tile,
+.genai-tier-card:focus .genai-tier-tile {
   box-shadow: 0 10px 22px rgba(0,0,0,0.16);
-  z-index: 20;
+}
+
+.genai-tier-card:focus-visible .genai-tier-tile {
+  box-shadow: 0 0 0 3px #1089ff, 0 10px 22px rgba(0,0,0,0.16);
 }
 
 /* Logo image */
-.genai-pyr-logo {
+.genai-tier-logo {
   width: 38px;
   height: 38px;
   object-fit: contain;
@@ -4917,7 +4971,7 @@ BLOG Single Post Pagination
 }
 
 /* Fallback letter */
-.genai-pyr-logo-fb {
+.genai-tier-logo-fb {
   width: 38px;
   height: 38px;
   border-radius: 8px;
@@ -4931,49 +4985,29 @@ BLOG Single Post Pagination
   pointer-events: none;
 }
 
-/* Tooltip — appears above block on hover */
-.genai-pyr-block::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%) translateY(4px);
-  background: rgba(20,20,30,0.84);
-  color: #fff;
+/* Tool name under the logo */
+.genai-tier-name {
+  width: 100%;
   font-size: 11px;
   font-weight: 600;
-  white-space: nowrap;
-  padding: 4px 9px;
-  border-radius: 5px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s, transform 0.15s;
-  z-index: 50;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--tl-name);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+
+/* Last updated note under the board */
+.genai-tier-updated {
+  font-size: 10px;
+  color: rgba(44,62,80,0.5);
+  text-align: right;
+  margin: 8px 2px 0;
   letter-spacing: 0.2px;
 }
-
-.genai-pyr-block::before {
-  content: '';
-  position: absolute;
-  bottom: calc(100% + 4px);
-  left: 50%;
-  transform: translateX(-50%) translateY(4px);
-  border: 4px solid transparent;
-  border-top-color: rgba(20,20,30,0.84);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s, transform 0.15s;
-  z-index: 50;
-}
-
-.genai-pyr-block:hover::after,
-.genai-pyr-block:hover::before,
-.genai-pyr-block:focus::after,
-.genai-pyr-block:focus::before {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
 /* Tier legend below pyramid */
 .genai-pyr-legend {
   display: flex;
@@ -5175,52 +5209,24 @@ BLOG Single Post Pagination
   margin-bottom: 0;
 }
 
-/* Pyramid responsive */
+/* Tier list responsive */
 
-/* lg (992–1199px) — slightly smaller blocks */
-@media (max-width: 1199px) {
-  .genai-pyr-block { width: 48px; height: 48px; border-radius: 10px; }
-  .genai-pyr-logo { width: 32px; height: 32px; }
-  .genai-pyr-logo-fb { width: 32px; height: 32px; font-size: 15px; }
-  .genai-pyr-row { gap: 6px; padding: 10px 16px; }
-}
-
-/* md (768–991px) — compact blocks that still fit 17 in a row */
+/* md (768–991px) — narrower label column */
 @media (max-width: 991px) {
-  .genai-pyr-block { width: 40px; height: 40px; border-radius: 9px; }
-  .genai-pyr-logo { width: 26px; height: 26px; }
-  .genai-pyr-logo-fb { width: 26px; height: 26px; font-size: 12px; }
-  .genai-pyr-row { gap: 4px; padding: 9px 10px; }
+  .genai-tier-label { flex-basis: 72px; font-size: 26px; }
+  .genai-tier-card { width: 68px; }
 }
 
-/* sm — mobile: wrap rows, show tier label above each row */
+/* sm — mobile: compact labels and cards, rows wrap */
 @media (max-width: 767px) {
-  .genai-pyr-row {
-    flex-wrap: wrap;
-    gap: 7px;
-    padding: 10px 14px;
-    border-radius: 0;
-  }
-
-  .genai-pyr-row:first-child { border-radius: 12px 12px 0 0; }
-  .genai-pyr-row:last-child  { border-radius: 0 0 12px 12px; }
-
-  /* Tier label injected via CSS above each mobile row */
-  .genai-pyr-row::before {
-    content: attr(data-tier-label);
-    display: block;
-    width: 100%;
-    font-size: 10px;
-    font-weight: 700;
-    color: rgba(44,62,80,0.48);
-    text-transform: uppercase;
-    letter-spacing: 0.9px;
-    margin-bottom: 4px;
-  }
-
-  .genai-pyr-block { width: 44px; height: 44px; border-radius: 10px; }
-  .genai-pyr-logo { width: 30px; height: 30px; }
-  .genai-pyr-logo-fb { width: 30px; height: 30px; font-size: 13px; }
+  .genai-tierlist { border-radius: 12px; }
+  .genai-tier-label { flex-basis: 52px; font-size: 22px; }
+  .genai-tier-items { gap: 8px; padding: 10px 8px; min-height: 88px; }
+  .genai-tier-card { width: 60px; gap: 4px; }
+  .genai-tier-tile { width: 44px; height: 44px; border-radius: 10px; }
+  .genai-tier-logo { width: 30px; height: 30px; }
+  .genai-tier-logo-fb { width: 30px; height: 30px; font-size: 13px; }
+  .genai-tier-name { font-size: 10px; }
 
   .genai-pyr-legend { gap: 10px; }
   .genai-legend-pill { font-size: 11px; }
@@ -5521,21 +5527,34 @@ body.dark-mode .proj-show-more-btn:hover {
 /* ── GenAI section ────────────────────────────────────────────── */
 body.dark-mode .genai-subheading { color: #8b949e !important; }
 
-/* Tier row backgrounds — override the inline --row-bg CSS var */
-body.dark-mode .genai-pyr-row[data-tier-label^="Tier 1"] { background: rgba(124, 58, 237, 0.18) !important; }
-body.dark-mode .genai-pyr-row[data-tier-label^="Tier 2"] { background: rgba(16, 137, 255, 0.16) !important; }
-body.dark-mode .genai-pyr-row[data-tier-label^="Tier 3"] { background: rgba(14, 165, 233, 0.15) !important; }
-body.dark-mode .genai-pyr-row[data-tier-label^="Tier 4"] { background: rgba(16, 185, 129, 0.15) !important; }
-body.dark-mode .genai-pyr-row[data-tier-label^="Tier 5"] { background: rgba(245, 158, 11, 0.14) !important; }
-body.dark-mode .genai-pyr-row[data-tier-label^="Tier 6"] { background: rgba(107, 114, 128, 0.12) !important; }
-
-body.dark-mode .genai-pyr-block {
-  background: #21262d !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+/* Tier list — swap board tokens and deepen label colours */
+body.dark-mode .genai-tierlist {
+  --tl-surface: #161b22;
+  --tl-border: #30363d;
+  --tl-card-bg: #21262d;
+  --tl-name: #c9d1d9;
+  --tl-label-text: #0d1117;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
 }
-body.dark-mode .genai-pyr-block:hover,
-body.dark-mode .genai-pyr-block:focus {
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.55) !important;
+body.dark-mode .genai-tier-row[data-tier="S"] { --tier-color: #e5534b; }
+body.dark-mode .genai-tier-row[data-tier="A"] { --tier-color: #e8833a; }
+body.dark-mode .genai-tier-row[data-tier="B"] { --tier-color: #d4a72c; }
+body.dark-mode .genai-tier-row[data-tier="C"] { --tier-color: #c9b52a; }
+body.dark-mode .genai-tier-row[data-tier="D"] { --tier-color: #6bc46d; }
+body.dark-mode .genai-tier-row[data-tier="E"] { --tier-color: #4fb3d9; }
+body.dark-mode .genai-tier-row[data-tier="F"] { --tier-color: #9d8ff7; }
+
+/* Beat the global .white-vertion div/span colour overrides */
+body.dark-mode .genai-tier-label { color: var(--tl-label-text) !important; }
+body.dark-mode .genai-tier-name  { color: var(--tl-name) !important; }
+body.dark-mode .genai-tier-updated { color: #8b949e !important; }
+
+body.dark-mode .genai-tier-tile {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+body.dark-mode .genai-tier-card:hover .genai-tier-tile,
+body.dark-mode .genai-tier-card:focus .genai-tier-tile {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.55);
 }
 
 body.dark-mode .genai-legend-pill { color: #8b949e !important; }

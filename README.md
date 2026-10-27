@@ -20,7 +20,7 @@ A fully static single-page portfolio built with plain HTML, CSS, and vanilla Jav
 | **About** | Bio and tabbed Skills & Tech Stack (Languages, ML & Data, Frameworks, Cloud, Databases, Tools) |
 | **Experiences** | Professional Development timeline - work, education, and achievement entries |
 | **Projects** | Filterable project card grid with show more/less and detail modals |
-| **My AI Stack** | Visual pyramid of 39 AI tools across 6 tiers, with per-tool modals |
+| **My AI Tier List** | S–F tier ranking board of 32 AI tools, with per-tool modals |
 | **Certificates** | Scrollable carousel of awards and certificates |
 | **Contact** | Contact form (Formspree) and social links |
 
@@ -62,7 +62,7 @@ aliflab.github.io/
 | `hero-typer.js` | Typing animation for role titles in the hero section |
 | `hero-stats.js` | Count-up animation for the fun stats widget (IntersectionObserver) |
 | `projects.js` | Project grid filtering and show more / less logic |
-| `genai.js` | Renders the AI stack pyramid and tool modals from a data array |
+| `genai.js` | Renders the AI tier list and tool modals from a data array |
 | `submitform.js` | Intercepts `#contactForm` submit, POSTs to Formspree via `fetch` |
 | `constant.js` | Defines `HOME_PAGE_URL` constant |
 | `pkey.js` | Password prompt on protected pages; redirects on wrong password |
