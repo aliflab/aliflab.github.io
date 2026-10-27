@@ -5008,36 +5008,6 @@ BLOG Single Post Pagination
   margin: 8px 2px 0;
   letter-spacing: 0.2px;
 }
-/* Tier legend below pyramid */
-.genai-pyr-legend {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 28px;
-}
-
-.genai-legend-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 12px;
-  color: rgba(44,62,80,0.7);
-  line-height: 1.4;
-}
-
-.genai-legend-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  display: inline-block;
-}
-
-.genai-legend-text strong {
-  font-weight: 700;
-  color: #2c3e50;
-}
 
 /* Modal */
 .genai-modal-backdrop {
@@ -5227,9 +5197,6 @@ BLOG Single Post Pagination
   .genai-tier-logo { width: 30px; height: 30px; }
   .genai-tier-logo-fb { width: 30px; height: 30px; font-size: 13px; }
   .genai-tier-name { font-size: 10px; }
-
-  .genai-pyr-legend { gap: 10px; }
-  .genai-legend-pill { font-size: 11px; }
 
   .genai-modal-head { padding: 22px 20px 16px; }
   .genai-modal-body { padding: 18px 20px 24px; }
@@ -5556,8 +5523,6 @@ body.dark-mode .genai-tier-card:hover .genai-tier-tile,
 body.dark-mode .genai-tier-card:focus .genai-tier-tile {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.55);
 }
-
-body.dark-mode .genai-legend-pill { color: #8b949e !important; }
 
 /* GenAI modal */
 body.dark-mode .genai-modal-backdrop { background: rgba(0, 0, 0, 0.78) !important; }

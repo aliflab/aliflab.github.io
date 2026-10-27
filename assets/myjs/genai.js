@@ -3,7 +3,7 @@
 
   var TIER_ORDER = ['S', 'A', 'B', 'C', 'D', 'E', 'F'];
 
-  // Label colours live in CSS (keyed by data-tier); `color` here drives the modal pill and legend dot
+  // Label colours live in CSS (keyed by data-tier); `color` here drives the modal pill
   var TIERS = {
     S: { color: '#e5534b', label: 'S Tier', desc: 'Daily driver, deeply integrated'   },
     A: { color: '#e8833a', label: 'A Tier', desc: 'Regular use, high proficiency'     },
@@ -358,19 +358,6 @@
   updated.textContent = 'Last updated: ' + LAST_UPDATED;
   wrap.parentNode.insertBefore(updated, wrap.nextSibling);
 
-  // ── Build legend ───────────────────────────────────────────────────────────
-  var legendEl = document.getElementById('genaiPyrLegend');
-  if (legendEl) {
-    TIER_ORDER.forEach(function (t) {
-      var tc   = TIERS[t];
-      var pill = document.createElement('div');
-      pill.className = 'genai-legend-pill';
-      pill.innerHTML =
-        '<span class="genai-legend-dot" style="background:' + tc.color + '" aria-hidden="true"></span>' +
-        '<span class="genai-legend-text"><strong>' + tc.label + '</strong> &mdash; ' + tc.desc + '</span>';
-      legendEl.appendChild(pill);
-    });
-  }
 
   // ── Modal ─────────────────────────────────────────────────────────────────
   var backdrop      = document.getElementById('genaiModalBackdrop');
