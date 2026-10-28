@@ -5,13 +5,13 @@
 
   // Label colours live in CSS (keyed by data-tier); `color` here drives the modal pill
   var TIERS = {
-    S: { color: '#e5534b', label: 'S Tier', desc: 'Daily driver, deeply integrated'   },
-    A: { color: '#e8833a', label: 'A Tier', desc: 'Regular use, high proficiency'     },
-    B: { color: '#d4a72c', label: 'B Tier', desc: 'Frequent use, task-specific'       },
-    C: { color: '#b5a300', label: 'C Tier', desc: 'Moderate use, growing familiarity' },
-    D: { color: '#57ab5a', label: 'D Tier', desc: 'Experimental, occasional use'      },
-    E: { color: '#39a0c8', label: 'E Tier', desc: 'Tried hands-on, occasional use'    },
-    F: { color: '#8b7cf6', label: 'F Tier', desc: 'Explored, aware of capabilities'   }
+    S: { color: '#e5534b', label: 'S Tier' },
+    A: { color: '#e8833a', label: 'A Tier' },
+    B: { color: '#d4a72c', label: 'B Tier' },
+    C: { color: '#b5a300', label: 'C Tier' },
+    D: { color: '#57ab5a', label: 'D Tier' },
+    E: { color: '#39a0c8', label: 'E Tier' },
+    F: { color: '#8b7cf6', label: 'F Tier' }
   };
 
   var TOOLS = [
@@ -300,11 +300,10 @@
     var row  = document.createElement('div');
     row.className = 'genai-tier-row';
     row.setAttribute('data-tier', t);
-    row.setAttribute('aria-label', tc.label + ': ' + tc.desc);
+    row.setAttribute('aria-label', tc.label);
 
     var label = document.createElement('div');
     label.className = 'genai-tier-label';
-    label.setAttribute('title', tc.desc);
     label.textContent = t;
     row.appendChild(label);
 
@@ -384,7 +383,7 @@
     };
 
     modalName.textContent     = tool.name;
-    modalTierPill.textContent = tc.label + ' — ' + tc.desc;
+    modalTierPill.textContent = tc.label;
     modalTierPill.style.background = tc.color;
     modalDesc.textContent  = tool.desc;
     modalUsage.textContent = tool.usage;

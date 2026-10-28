@@ -4869,7 +4869,7 @@ BLOG Single Post Pagination
   --tl-name: #2c3e50;
   --tl-label-text: #1f2328;
   width: 100%;
-  margin: 28px 0 0;
+  margin: 20px 0 0;
   border: 1px solid var(--tl-border);
   border-radius: 14px;
   overflow: hidden;
@@ -4896,13 +4896,13 @@ BLOG Single Post Pagination
 
 /* Tier letter */
 .genai-tier-label {
-  flex: 0 0 96px;
+  flex: 0 0 72px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--tier-color);
   color: var(--tl-label-text);
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 800;
   line-height: 1;
   user-select: none;
@@ -4912,23 +4912,23 @@ BLOG Single Post Pagination
 .genai-tier-items {
   flex: 1;
   min-width: 0;
-  min-height: 104px;
+  min-height: 76px;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: center;
-  gap: 10px;
-  padding: 12px;
+  gap: 8px;
+  padding: 8px 10px;
   background: var(--tl-surface);
 }
 
 /* Individual tool card */
 .genai-tier-card {
-  width: 76px;
+  width: 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   cursor: pointer;
   outline: none;
   border-radius: 12px;
@@ -4941,9 +4941,9 @@ BLOG Single Post Pagination
 }
 
 .genai-tier-tile {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   background: var(--tl-card-bg);
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   display: flex;
@@ -4963,8 +4963,8 @@ BLOG Single Post Pagination
 
 /* Logo image */
 .genai-tier-logo {
-  width: 38px;
-  height: 38px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
   display: block;
   pointer-events: none;
@@ -4972,12 +4972,12 @@ BLOG Single Post Pagination
 
 /* Fallback letter */
 .genai-tier-logo-fb {
-  width: 38px;
-  height: 38px;
+  width: 30px;
+  height: 30px;
   border-radius: 8px;
   background: #1089ff;
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -4988,7 +4988,7 @@ BLOG Single Post Pagination
 /* Tool name under the logo */
 .genai-tier-name {
   width: 100%;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   line-height: 1.25;
   text-align: center;
@@ -5183,8 +5183,8 @@ BLOG Single Post Pagination
 
 /* md (768–991px) — narrower label column */
 @media (max-width: 991px) {
-  .genai-tier-label { flex-basis: 72px; font-size: 26px; }
-  .genai-tier-card { width: 68px; }
+  .genai-tier-label { flex-basis: 60px; font-size: 24px; }
+  .genai-tier-card { width: 60px; }
 }
 
 /* sm — mobile: compact labels and cards, rows wrap */
