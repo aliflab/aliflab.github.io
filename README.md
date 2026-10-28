@@ -20,7 +20,7 @@ A fully static single-page portfolio built with plain HTML, CSS, and vanilla Jav
 | **About** | Bio and tabbed Skills & Tech Stack (Languages, ML & Data, Frameworks, Cloud, Databases, Tools) |
 | **Experiences** | Professional Development timeline - work, education, and achievement entries |
 | **Projects** | Filterable project card grid with show more/less and detail modals |
-| **My AI Tier List** | S–F tier ranking board of 32 AI tools, with per-tool modals |
+| **My AI Tier List** | S–F tier ranking board of 30 AI tools, with per-tool modals |
 | **Certificates** | Scrollable carousel of awards and certificates |
 | **Contact** | Contact form (Formspree) and social links |
 

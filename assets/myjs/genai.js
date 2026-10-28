@@ -95,14 +95,6 @@
       cases: ['Multi-file code generation and refactoring with full codebase context', 'Building Python automation scripts for IT and infrastructure workflows', 'Debugging complex codebases with AI-assisted root cause analysis', 'Rapid prototyping of web applications and internal tools']
     },
     {
-      name: 'GitHub Copilot', tier: 'C', cat: 'coding',
-      logo: 'https://img.icons8.com/?size=100&id=Yl9ip6CjqAEI&format=png&color=000000',
-      summary: 'IDE inline code completion and pair programming in VS Code.',
-      desc: 'GitHub Copilot is an AI pair programmer by GitHub and OpenAI that provides intelligent inline code completion, function generation, and code explanation within VS Code and other IDEs. It draws on models trained across public code repositories to suggest contextually relevant completions.',
-      usage: 'Used within VS Code for day-to-day development assistance, inline code completion, and boilerplate generation for IT automation scripts, API integrations, and web projects. Useful for accelerating repetitive coding patterns.',
-      cases: ['Inline code completion in VS Code for Python, JavaScript, and PHP', 'Generating boilerplate for REST API integrations and SDK usage', 'Code explanation and inline documentation generation', 'Unit test scaffolding for automation scripts']
-    },
-    {
       name: 'Replit', tier: 'C', cat: 'coding',
       logo: 'https://img.icons8.com/?size=100&id=FnhiFHcPQyOa&format=png&color=000000',
       summary: 'AI-powered browser IDE for rapid prototyping with instant hosting.',
@@ -117,14 +109,6 @@
       desc: 'Lovable is an AI-powered full-stack web application builder that generates complete React applications from natural language descriptions, handling frontend components, backend logic, database schemas, and deployment automatically. It is designed to accelerate from idea to working application.',
       usage: 'Used for rapidly scaffolding full-stack web application MVPs from high-level product descriptions. I use it to accelerate the initial design and scaffolding phase, then take the generated code into Cursor or Claude Code for refinement.',
       cases: ['MVP prototyping from product requirement descriptions in minutes', 'Generating React component structures and page layouts', 'Rapid front-end prototyping for client and stakeholder presentations', 'Exploring application architecture ideas before committing to a stack']
-    },
-    {
-      name: 'v0 by Vercel', tier: 'C', cat: 'coding',
-      logo: 'https://img.icons8.com/?size=100&id=eXVvv0ElyhQy&format=png&color=000000',
-      summary: 'AI UI component generation for React and Next.js projects.',
-      desc: 'v0 is Vercel\'s AI-powered UI generation tool that creates React and Next.js components from text or image prompts using shadcn/ui and Tailwind CSS. It specialises in generating clean, production-ready frontend components that can be directly copied into projects.',
-      usage: 'Used for generating UI components and page layouts for web projects when I need clean, well-structured React components with Tailwind styling. I use v0 to rapidly prototype dashboard interfaces and component libraries for projects.',
-      cases: ['Generating React UI components and layouts from design descriptions', 'Prototyping dashboard and admin interface designs', 'Creating Tailwind-styled reusable component libraries', 'Bootstrapping Next.js project UI from textual specifications']
     },
     {
       name: 'Base44', tier: 'C', cat: 'coding',
@@ -235,20 +219,20 @@
       cases: ['Creating AI avatar explainer videos for project demonstrations', 'Generating multilingual training content without re-recording', 'Personal branding video content production', 'Evaluating AI video for enterprise training content delivery']
     },
     {
-      name: 'Descript', tier: 'E', cat: 'video',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Descript_%28Icon%29.svg/1920px-Descript_%28Icon%29.svg.png',
-      summary: 'AI video and podcast editing through text transcript manipulation.',
-      desc: 'Descript is an AI-powered media editing platform that enables video and audio editing through text transcript manipulation rather than traditional timeline editing. Features include Overdub voice cloning, automatic filler word removal, and AI-assisted clip generation for content repurposing.',
-      usage: 'Used for editing recorded video and audio content by manipulating the transcript — removing filler words, cutting sections, and generating short clips for social media distribution without traditional video editing expertise.',
-      cases: ['Transcript-based video editing for recorded presentations and demos', 'Automated filler word and silence removal from recordings', 'Creating short social clips from long-form recorded content', 'Podcast and audio content editing and cleanup']
+      name: 'GitHub Copilot', tier: 'E', cat: 'coding',
+      logo: 'https://img.icons8.com/?size=100&id=Yl9ip6CjqAEI&format=png&color=000000',
+      summary: 'IDE inline code completion and pair programming in VS Code.',
+      desc: 'GitHub Copilot is an AI pair programmer by GitHub and OpenAI that provides intelligent inline code completion, function generation, and code explanation within VS Code and other IDEs. It draws on models trained across public code repositories to suggest contextually relevant completions.',
+      usage: 'Used within VS Code for day-to-day development assistance, inline code completion, and boilerplate generation for IT automation scripts, API integrations, and web projects. Useful for accelerating repetitive coding patterns.',
+      cases: ['Inline code completion in VS Code for Python, JavaScript, and PHP', 'Generating boilerplate for REST API integrations and SDK usage', 'Code explanation and inline documentation generation', 'Unit test scaffolding for automation scripts']
     },
     {
-      name: 'Copy.ai', tier: 'E', cat: 'writing',
-      logo: 'https://img.icons8.com/?size=100&id=tv7GSC4vCGHe&format=png&color=000000',
-      summary: 'AI copywriting for emails, social posts, and marketing content.',
-      desc: 'Copy.ai is an AI-powered copywriting tool generating marketing copy, email sequences, social media posts, and product descriptions. It includes workflow automation for content production pipelines and team collaboration tools for scaling content output.',
-      usage: 'Used occasionally for generating email copy, social media captions, and marketing material drafts when speed of content production is the priority over deep customisation.',
-      cases: ['Email sequence drafting and subject line optimisation', 'Social media caption and post generation across platforms', 'Product and feature description writing for documentation', 'Cold outreach and professional message drafting at volume']
+      name: 'v0 by Vercel', tier: 'E', cat: 'coding',
+      logo: 'https://img.icons8.com/?size=100&id=eXVvv0ElyhQy&format=png&color=000000',
+      summary: 'AI UI component generation for React and Next.js projects.',
+      desc: 'v0 is Vercel\'s AI-powered UI generation tool that creates React and Next.js components from text or image prompts using shadcn/ui and Tailwind CSS. It specialises in generating clean, production-ready frontend components that can be directly copied into projects.',
+      usage: 'Used for generating UI components and page layouts for web projects when I need clean, well-structured React components with Tailwind styling. I use v0 to rapidly prototype dashboard interfaces and component libraries for projects.',
+      cases: ['Generating React UI components and layouts from design descriptions', 'Prototyping dashboard and admin interface designs', 'Creating Tailwind-styled reusable component libraries', 'Bootstrapping Next.js project UI from textual specifications']
     },
 
     // ── F Tier ─────────────────────────────────────────────────────────────────
