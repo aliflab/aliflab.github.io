@@ -35,7 +35,7 @@
   <!-- Fancybox-->
   <link rel="stylesheet" href="assets/plugins/css/jquery.fancybox.min.css">
   <!-- GitHub Calendar -->
-  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css">
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@2.3.4/dist/github-calendar-responsive.css">
   <!-- Custom CSS-->
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
@@ -1571,8 +1571,7 @@
               <!-- Right: form panel -->
               <div class="ct-form-panel">
                 <h4 class="ct-form-heading">Send a Message</h4>
-                <form id="contactForm" class="single-form quate-form" data-toggle="validator" action="https://formspree.io/f/mgvewpgv" method="POST">
-                  <div id="msgSubmit" class="h3 text-center hidden"></div>
+                <form id="contactForm" class="single-form quate-form" action="https://formspree.io/f/mgvewpgv" method="POST">
 
                   <div class="ct-field">
                     <input name="name" id="name" type="text" placeholder=" " required class="contact-name">
@@ -1645,8 +1644,6 @@
   <script src="assets/plugins/js/jquery.min.js"></script>
   <!-- owl carousel -->
   <script src="assets/plugins/js/owl.carousel.js"></script>
-  <!-- validator -->
-  <script src="assets/plugins/js/validator.min.js"></script>
   <!-- wow -->
   <script src="assets/plugins/js/wow.min.js"></script>
   <!-- mixin js-->
@@ -1675,7 +1672,7 @@
 
   <!-- GitHub Calendar -->
   <script src="assets/myjs/github-stats.js"></script>
-  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+  <script src="https://unpkg.com/github-calendar@2.3.4/dist/github-calendar.min.js"></script>
   <script>
     GitHubCalendar(".calendar", "aliflab", { responsive: true, tooltips: true })
       .then(function () { window.patchGitHubStats && window.patchGitHubStats(); });
