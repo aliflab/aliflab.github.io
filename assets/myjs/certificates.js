@@ -3,10 +3,8 @@
    .carousel-inner, because Bootstrap indexes slides positionally — merely hiding
    items with CSS would leave prev/next landing on blank slides.
 
-   Note: window.$ is overwritten by assets/plugins/js/jquery.min.js *after*
-   bootstrap.min.js loads, so $.fn.carousel is not available here. Everything
-   below is plain DOM. Bootstrap's delegated data-api handlers stay bound to
-   document, so the prev/next/indicator clicks keep working. */
+   Everything below is plain DOM. Bootstrap's delegated data-api handlers stay
+   bound to document, so the prev/next/indicator clicks keep working. */
 (function () {
   var CAROUSEL_ID = 'carouselExampleIndicators';
 

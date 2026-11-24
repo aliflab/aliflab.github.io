@@ -63,8 +63,8 @@
 
     if (!days.length) return null;
 
-    // Helper: is this day active?
-    function active(d) { return d.count === null ? false : d.count > 0; }
+    // Helper: is this day active? null = data-level > 0 but no tooltip count found
+    function active(d) { return d.count === null || d.count > 0; }
 
     // Total pushes (sum of exact counts) and active-day count
     var total = 0, activeDays = 0;

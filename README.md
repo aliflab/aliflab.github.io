@@ -50,7 +50,7 @@ aliflab.github.io/
 │   │   └── responsive.css  # Responsive / breakpoint overrides
 │   ├── js/                 # Third-party scripts (particles.js, custom-scripts.js, etc.)
 │   ├── myjs/               # First-party scripts (see below)
-│   ├── plugins/            # Vendored CSS/JS (Bootstrap, Owl Carousel, Fancybox)
+│   ├── plugins/            # Vendored CSS/JS (Bootstrap, Animate.css, WOW, jQuery One Page Nav)
 │   └── images/             # Images and favicon variants
 ```
 
@@ -64,8 +64,6 @@ aliflab.github.io/
 | `projects.js` | Project grid filtering and show more / less logic |
 | `genai.js` | Renders the AI tier list and tool modals from a data array |
 | `submitform.js` | Intercepts `#contactForm` submit, POSTs to Formspree via `fetch` |
-| `constant.js` | Defines `HOME_PAGE_URL` constant |
-| `pkey.js` | Password prompt on protected pages; redirects on wrong password |
 
 ---
 
@@ -104,4 +102,3 @@ Implementation notes:
 
 - `index.html` (root) - uses `assets/...`
 - Files inside `blog/` - use `../assets/...`
-- `constant.js` must be loaded before `pkey.js` on blog/protected pages

@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         var form = this;
         var data = new FormData(form);
+        var button = form.querySelector('button[type="submit"]');
+        button.disabled = true; // stop double-clicks sending the message twice
 
         fetch(form.action, {
             method: form.method,
@@ -24,10 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     } else {
                         alert('Oops! There was a problem submitting your form');
                     }
+                }).catch(() => {
+                    // error body was not JSON (e.g. an HTML 5xx or 429 page)
+                    alert('Oops! There was a problem submitting your form');
                 });
             }
         }).catch(error => {
             alert('Error: ' + error);
+        }).finally(() => {
+            button.disabled = false;
         });
     });
 });
