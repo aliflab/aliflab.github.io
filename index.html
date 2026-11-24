@@ -53,7 +53,7 @@
 </head>
 
 <body class="white-vertion black-bg">
-  <script>if(localStorage.getItem('theme')==='dark'){document.body.classList.add('dark-mode');}</script>
+  <script>try{if(localStorage.getItem('theme')==='dark'){document.body.classList.add('dark-mode');}}catch(e){}</script>
 
   <button class="theme-toggle-btn" id="themeToggle" aria-label="Switch to dark mode">
     <i class="fa-solid fa-moon"></i>

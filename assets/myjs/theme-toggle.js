@@ -8,7 +8,7 @@
     var icon = btn.querySelector('i');
     icon.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
     btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
-    localStorage.setItem(KEY, dark ? 'dark' : 'light');
+    try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {} // storage blocked: theme just won't persist
   }
 
   // Sync icon with whatever state was restored by the early inline script
